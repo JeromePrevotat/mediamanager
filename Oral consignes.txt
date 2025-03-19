@@ -1,0 +1,9 @@
+Durée 20min
+fin du mois
+slide numérotées
+Pour votre oral de BDD vous aurez 20 minutes pour : 
+présenter votre projet
+présenter le MCD  correspondant
+présenter une ou deux fonctionnalités de votre appli et les requêtes qui permettront de les faire fonctionner
+
+20 - 24 - 26 exams
