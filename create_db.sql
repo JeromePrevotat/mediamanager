@@ -78,6 +78,6 @@ CREATE TABLE IF NOT EXISTS artistes_medias_priser(
     id_artiste INT NOT NULL,
     FOREIGN KEY (id_artiste) REFERENCES artistes(id_artiste),
     intitule_prix VARCHAR(50) NOT NULL,
-    categorie_prix VARCHAR(50) NOT NULL,
+    categorie_prix VARCHAR(50),
     annee_prix INT NOT NULL
 );

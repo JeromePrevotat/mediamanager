@@ -1,76 +1,85 @@
-/*INSERT INTO genres('intitule_genre','epoque_genre')
-VALUES(
+INSERT INTO genres(intitule_genre,epoque_genre) VALUES
+  ('Comedie', '60s'),   ('Drame', '60s'),   ('Horreur', '60s'),   
+  ('Comedie', '70s'),   ('Drame', '70s'),   ('Horreur', '70s'), 
+  ('Comedie', '80s'),   ('Drame', '80s'),   ('Horreur', '80s'), 
+  ('Comedie', '90s'),   ('Drame', '90s'),   ('Horreur', '90s'), 
+  ('Comedie', '2000'),  ('Drame', '2000'),  ('Horreur', '2000'),  
+  ('Comedie', '2010'),  ('Drame', '2010'),  ('Horreur', '2010'),  
+  ('Comedie', '2020'),  ('Drame', '2020'),  ('Horreur', '2020'),
+  ('Comedie', NULL),    ('Drame', NULL),    ('Horreur', NULL);
 
-);*/
-
-INSERT INTO medias(titre_media,categorie_media,date_sortie_media)
-VALUES
+-- MEDIAS
+INSERT INTO medias(titre_media,categorie_media,date_sortie_media) VALUES
 	('Pulp Fiction', 'Film', 1994),
-    ('Star Wars The Clone War', 'Serie', 2008);
+  ('Star Wars The Clone War', 'Serie', 2008);
 
 INSERT INTO medias (titre_media, categorie_media, date_sortie_media) VALUES
-    ('La Tentation de Barbizon', 'Comédie', 1946),
-    ('Six Heures à perdre', 'Comédie', 1947),
-    ('Le Château de la dernière chance', 'Comédie', 1947),
+    ('La Tentation de Barbizon', 'Film', 1946),
+    ('Six Heures à perdre', 'Film', 1947),
+    ('Le Château de la dernière chance', 'Film', 1947),
     ('Dernier Refuge', 'Drame', 1947),
-    ('Antoine et Antoinette', 'Comédie', 1947),
-    ('Croisière pour l''inconnu', 'Comédie', 1948),
+    ('Antoine et Antoinette', 'Film', 1947),
+    ('Croisière pour l''inconnu', 'Film', 1948),
     ('Du Guesclin', 'Historique', 1949),
     ('Mission à Tanger', 'Aventure', 1949),
-    ('Je n''aime que toi', 'Comédie', 1949),
-    ('Millionnaires d''un jour', 'Comédie', 1949),
-    ('Vient de paraître', 'Comédie', 1949),
-    ('Rendez-vous de juillet', 'Comédie', 1949),
+    ('Je n''aime que toi', 'Film', 1949),
+    ('Millionnaires d''un jour', 'Film', 1949),
+    ('Vient de paraître', 'Film', 1949),
+    ('Rendez-vous de juillet', 'Film', 1949),
     ('Un certain monsieur', 'Policier', 1950),
-    ('La Rue sans loi', 'Comédie', 1950),
-    ('Pas de week-end pour notre amour', 'Comédie', 1950),
-    ('Le Roi Pandore', 'Comédie', 1950),
-    ('La Vie chantée', 'Comédie', 1951),
-    ('Boîte à vendre', 'Comédie', 1951),
+    ('La Rue sans loi', 'Film', 1950),
+    ('Pas de week-end pour notre amour', 'Film', 1950),
+    ('Le Roi Pandore', 'Film', 1950),
+    ('La Vie chantée', 'Film', 1951),
+    ('Boîte à vendre', 'Film', 1951),
     ('Foyer perdu', 'Drame', 1952),
-    ('Les Sept Péchés capitaux', 'Comédie', 1952),
-    ('Monsieur Taxi', 'Comédie', 1952),
-    ('La Fugue de monsieur Perle', 'Comédie', 1952),
-    ('Elle et moi', 'Comédie', 1952),
-    ('Le Trou normand', 'Comédie', 1952),
-    ('La Vie d''un honnête homme', 'Comédie', 1953),
-    ('Les Corsaires du bois de Boulogne', 'Comédie', 1954),
-    ('Ah ! les belles bacchantes', 'Comédie', 1954),
-    ('Poisson d''avril', 'Comédie', 1954),
+    ('Les Sept Péchés capitaux', 'Film', 1952),
+    ('Monsieur Taxi', 'Film', 1952),
+    ('La Fugue de monsieur Perle', 'Film', 1952),
+    ('Elle et moi', 'Film', 1952),
+    ('Le Trou normand', 'Film', 1952),
+    ('La Vie d''un honnête homme', 'Film', 1953),
+    ('Les Corsaires du bois de Boulogne', 'Film', 1954),
+    ('Ah ! les belles bacchantes', 'Film', 1954),
+    ('Poisson d''avril', 'Film', 1954),
     ('Les Intrigantes', 'Drame', 1954),
-    ('Papa, maman, la bonne et moi', 'Comédie', 1954),
-    ('Escalier de service', 'Comédie', 1954),
-    ('Le Mouton à cinq pattes', 'Comédie', 1954),
-    ('La Bande à papa', 'Comédie', 1956),
-    ('Papa, maman, ma femme et moi', 'Comédie', 1956),
-    ('La Traversée de Paris', 'Comédie', 1956),
-    ('Comme un cheveu sur la soupe', 'Comédie', 1957),
-    ('Ni vu, ni connu', 'Comédie', 1958),
-    ('Taxi, Roulotte et Corrida', 'Comédie', 1958),
-    ('Le Petit Baigneur', 'Comédie', 1968),
-    ('Le Gendarme de Saint-Tropez', 'Comédie', 1964),
-    ('Le Gendarme à New York', 'Comédie', 1965),
-    ('Le Gendarme se marie', 'Comédie', 1968),
-    ('Le Gendarme en balade', 'Comédie', 1970),
-    ('Le Gendarme et les Extra-terrestres', 'Comédie', 1979),
-    ('Le Gendarme et les Gendarmettes', 'Comédie', 1982),
-    ('Fantômas', 'Comédie', 1964),
-    ('Fantômas se déchaîne', 'Comédie', 1965),
-    ('Fantômas contre Scotland Yard', 'Comédie', 1967),
-    ('Le Corniaud', 'Comédie', 1965),
-    ('La Grande Vadrouille', 'Comédie', 1966),
-    ('Les Grandes Vacances', 'Comédie', 1967),
-    ('Oscar', 'Comédie', 1967),
-    ('Hibernatus', 'Comédie', 1969),
-    ('L''Homme orchestre', 'Comédie', 1970),
-    ('Jo', 'Comédie policière', 1971),
-    ('La Folie des grandeurs', 'Comédie', 1971),
-    ('Les Aventures de Rabbi Jacob', 'Comédie', 1973),
-    ('L''Aile ou la Cuisse', 'Comédie', 1976),
-    ('La Zizanie', 'Comédie', 1978),
-    ('L''Avare', 'Comédie', 1980),
-    ('La Soupe aux choux', 'Comédie', 1981);
+    ('Papa, maman, la bonne et moi', 'Film', 1954),
+    ('Escalier de service', 'Film', 1954),
+    ('Le Mouton à cinq pattes', 'Film', 1954),
+    ('La Bande à papa', 'Film', 1956),
+    ('Papa, maman, ma femme et moi', 'Film', 1956),
+    ('La Traversée de Paris', 'Film', 1956),
+    ('Comme un cheveu sur la soupe', 'Film', 1957),
+    ('Ni vu, ni connu', 'Film', 1958),
+    ('Taxi, Roulotte et Corrida', 'Film', 1958),
+    ('Le Petit Baigneur', 'Film', 1968),
+    ('Le Gendarme de Saint-Tropez', 'Film', 1964),
+    ('Le Gendarme à New York', 'Film', 1965),
+    ('Le Gendarme se marie', 'Film', 1968),
+    ('Le Gendarme en balade', 'Film', 1970),
+    ('Le Gendarme et les Extra-terrestres', 'Film', 1979),
+    ('Le Gendarme et les Gendarmettes', 'Film', 1982),
+    ('Fantômas', 'Film', 1964),
+    ('Fantômas se déchaîne', 'Film', 1965),
+    ('Fantômas contre Scotland Yard', 'Film', 1967),
+    ('Le Corniaud', 'Film', 1965),
+    ('La Grande Vadrouille', 'Film', 1966),
+    ('Les Grandes Vacances', 'Film', 1967),
+    ('Oscar', 'Film', 1967),
+    ('Hibernatus', 'Film', 1969),
+    ('L''Homme orchestre', 'Film', 1970),
+    ('Jo', 'Film policière', 1971),
+    ('La Folie des grandeurs', 'Film', 1971),
+    ('Les Aventures de Rabbi Jacob', 'Film', 1973),
+    ('L''Aile ou la Cuisse', 'Film', 1976),
+    ('La Zizanie', 'Film', 1978),
+    ('L''Avare', 'Film', 1980),
+    ('La Soupe aux choux', 'Film', 1981);
 
+
+-- FICHES INFORMATIONS
+-- Artistes
+-- DE FUNES
 INSERT INTO ficheInformations (nom, prenom, date_naissance, date_mort) VALUES
   ('de Funès', 'Louis', '1914-10-31', '1983-01-27'),
   ('Dhéry', 'Robert', '1921-04-27', '2004-12-03'),
@@ -164,6 +173,17 @@ INSERT INTO ficheInformations (nom, prenom, date_naissance, date_mort) VALUES
   ('Montavon', 'Max', '1923-11-01', '2000-10-28'),
   ('Girault', 'Jean', '1930-12-17', '1982-07-20');
 
+-- TARANTINO
+INSERT INTO ficheInformations (nom, prenom, date_naissance, date_mort) VALUES
+  ('Tarantino', 'Quentin', '1963-03-27', NULL),
+  ('Willis', 'Bruce', '1955-03-19', NULL),
+  ('Roth', 'Tim', '1961-05-14', NULL),
+  ('Travolta', 'John', '1954-02-18', NULL),
+  ('Jackson', 'Samuel L.', '1948-12-21', NULL),
+  ('Thurman', 'Uma', '1970-04-29', NULL)
+  ('Dale', 'Dick', '1937-05-04', '2019-03-16');
+
+
 -- Utilisateurs
 INSERT INTO ficheInformations (nom, prenom, date_naissance, date_mort) VALUES
   ('Gay', 'Virginie', '1991-10-31', 'NULL'),
@@ -179,6 +199,9 @@ INSERT INTO ficheInformations (nom, prenom, date_naissance, date_mort) VALUES
   ('Cas', 'Quentin', '1993-06-27', 'NULL'),
   ('Lasserre', 'Elijah', '2002-08-03', 'NULL');
 
+
+-- ARTISTES
+-- De Funes
 INSERT INTO artistes (nb_contribution_artiste, debut_metier_artiste, id_fiche_informations_artiste) VALUES 
   (140, '1945', (SELECT id_fiche_information FROM ficheInformations WHERE nom = 'De Funès' AND prenom = 'Louis')),
   (60, '1946', (SELECT id_fiche_information FROM ficheInformations WHERE nom = 'Dhéry' AND prenom = 'Robert')),
@@ -281,6 +304,36 @@ INSERT INTO artistes (nb_contribution_artiste, debut_metier_artiste, id_fiche_in
   (NULL, NULL, (SELECT id_fiche_information FROM ficheInformations WHERE nom = 'Bourday' AND prenom = 'Micheline')),
   (NULL, NULL, (SELECT id_fiche_information FROM ficheInformations WHERE nom = 'Barbulée' AND prenom = 'Madeleine')),
   (NULL, NULL, (SELECT id_fiche_information FROM ficheInformations WHERE nom = 'Montavon' AND prenom = 'Max'));
+
+-- Quentin Tarentino
+INSERT INTO artistes (nb_contribution_artiste, debut_metier_artiste, id_fiche_informations_artiste) VALUES 
+  (10, '1992', (SELECT id_fiche_information FROM ficheInformations WHERE nom = 'Tarentino' AND prenom = 'Quentin')),
+  (70, '1980', (SELECT id_fiche_information FROM ficheInformations WHERE nom = 'Willis' AND prenom = 'Bruce')),
+  (50, '1984', (SELECT id_fiche_information FROM ficheInformations WHERE nom = 'Roth' AND prenom = 'Tim')),
+  (60, '1976', (SELECT id_fiche_information FROM ficheInformations WHERE nom = 'Travolta' AND prenom = 'John')),
+  (150, '1972', (SELECT id_fiche_information FROM ficheInformations WHERE nom = 'Jackson' AND prenom = 'Samuel L.')),
+  (50, '1988', (SELECT id_fiche_information FROM ficheInformations WHERE nom = 'Thurman' AND prenom = 'Uma')),
+  (NULL, NULL, (SELECT id_fiche_information FROM ficheInformations WHERE nom = 'Dale' AND prenom = 'Dick'));
+
+
+-- ARTISTES MEDIAS
+-- Pulp Fiction
+-- Acteurs
+INSERT INTO artistes_medias (id_media, id_artiste, metier) VALUES
+  ((SELECT id_media FROM medias WHERE titre = 'Pulp Fiction'), (SELECT id_artiste FROM artistes WHERE nom = 'Tarentino' AND prenom = 'Quentin'), 'Acteur'),
+  ((SELECT id_media FROM medias WHERE titre = 'Pulp Fiction'), (SELECT id_artiste FROM artistes WHERE nom = 'Willis' AND prenom = 'Bruce'), 'Acteur'),
+  ((SELECT id_media FROM medias WHERE titre = 'Pulp Fiction'), (SELECT id_artiste FROM artistes WHERE nom = 'Roth' AND prenom = 'Tim'), 'Acteur'),
+  ((SELECT id_media FROM medias WHERE titre = 'Pulp Fiction'), (SELECT id_artiste FROM artistes WHERE nom = 'Travolta' AND prenom = 'John'), 'Acteur'),
+  ((SELECT id_media FROM medias WHERE titre = 'Pulp Fiction'), (SELECT id_artiste FROM artistes WHERE nom = 'Jackson' AND prenom = 'Samuel L.'), 'Acteur'),
+  ((SELECT id_media FROM medias WHERE titre = 'Pulp Fiction'), (SELECT id_artiste FROM artistes WHERE nom = 'Thurman' AND prenom = 'Uma'), 'Acteur');
+
+-- Réalisateur
+INSERT INTO artistes_medias (id_media, id_artiste, metier) VALUES
+  ((SELECT id_media FROM medias WHERE titre = 'Pulp Fiction'), (SELECT id_artiste FROM artistes WHERE nom = 'Tarentino' AND prenom = 'Quentin'), 'Réalisateur');
+
+-- Compositeur
+INSERT INTO artistes_medias (id_media, id_artiste, metier) VALUES
+  ((SELECT id_media FROM medias WHERE titre = 'Pulp Fiction'), (SELECT id_artiste FROM artistes WHERE nom = 'Dale' AND prenom = 'Dick'), 'Compositeur'),
 
 -- Le Petit Baigneur
 -- Insérer dans la table artistes_medias pour les acteurs
@@ -500,6 +553,7 @@ INSERT INTO artistes_medias (id_media, id_artiste, metier) VALUES
 -- Insérer dans la table artistes_medias pour le compositeur
 INSERT INTO artistes_medias (id_media, id_artiste, metier) VALUES
   ((SELECT id_media FROM medias WHERE titre = 'Le Corniaud'), (SELECT id_artiste FROM artistes WHERE nom = 'Delerue' AND prenom = 'Georges'), 'Compositeur');
+
 
 -- La Grande Vadrouille
 -- Insérer dans la table artistes_medias pour les acteurs 
@@ -740,22 +794,74 @@ INSERT INTO artistes_utilisateurs(id_artiste, id_utilisateur, categorie_favori_a
   (SELECT utilisateurs.id_utilisateur FROM utilisateurs
   JOIN ficheInformations ON utilisateurs.id_fiche_informations_utilisateur = utilisateurs.id_fiche_information
   WHERE ficheInformations.nom='Peyronnet' AND ficheInformations.prenom='Leo'),
+  'Compositeur', CURRENT_DATE()),
+  ((SELECT artistes.id_artiste FROM artistes
+  JOIN ficheInformations ON artistes.id_fiche_informations_artiste = artistes.id_fiche_information
+  WHERE ficheInformations.nom='Magne' AND ficheInformations.prenom='Michel'),
+  (SELECT utilisateurs.id_utilisateur FROM utilisateurs
+  JOIN ficheInformations ON utilisateurs.id_fiche_informations_utilisateur = utilisateurs.id_fiche_information
+  WHERE ficheInformations.nom='Peyronnet' AND ficheInformations.prenom='Leo'),
+  'Compositeur', CURRENT_DATE()),
+  ((SELECT artistes.id_artiste FROM artistes
+  JOIN ficheInformations ON artistes.id_fiche_informations_artiste = artistes.id_fiche_information
+  WHERE ficheInformations.nom='Delerue' AND ficheInformations.prenom='Georges'),
+  (SELECT utilisateurs.id_utilisateur FROM utilisateurs
+  JOIN ficheInformations ON utilisateurs.id_fiche_informations_utilisateur = utilisateurs.id_fiche_information
+  WHERE ficheInformations.nom='Peyronnet' AND ficheInformations.prenom='Leo'),
+  'Compositeur', CURRENT_DATE()),
+  ((SELECT artistes.id_artiste FROM artistes
+  JOIN ficheInformations ON artistes.id_fiche_informations_artiste = artistes.id_fiche_information
+  WHERE ficheInformations.nom='Auric' AND ficheInformations.prenom='Georges'),
+  (SELECT utilisateurs.id_utilisateur FROM utilisateurs
+  JOIN ficheInformations ON utilisateurs.id_fiche_informations_utilisateur = utilisateurs.id_fiche_information
+  WHERE ficheInformations.nom='Peyronnet' AND ficheInformations.prenom='Leo'),
+  'Compositeur', CURRENT_DATE()),
+  ((SELECT artistes.id_artiste FROM artistes
+  JOIN ficheInformations ON artistes.id_fiche_informations_artiste = artistes.id_fiche_information
+  WHERE ficheInformations.nom='Polnareff' AND ficheInformations.prenom='Michel'),
+  (SELECT utilisateurs.id_utilisateur FROM utilisateurs
+  JOIN ficheInformations ON utilisateurs.id_fiche_informations_utilisateur = utilisateurs.id_fiche_information
+  WHERE ficheInformations.nom='Peyronnet' AND ficheInformations.prenom='Leo'),
+  'Compositeur', CURRENT_DATE()),
+  ((SELECT artistes.id_artiste FROM artistes
+  JOIN ficheInformations ON artistes.id_fiche_informations_artiste = artistes.id_fiche_information
+  WHERE ficheInformations.nom='Roy' AND ficheInformations.prenom='Hervé'),
+  (SELECT utilisateurs.id_utilisateur FROM utilisateurs
+  JOIN ficheInformations ON utilisateurs.id_fiche_informations_utilisateur = utilisateurs.id_fiche_information
+  WHERE ficheInformations.nom='Peyronnet' AND ficheInformations.prenom='Leo'),
+  'Compositeur', CURRENT_DATE()),
+  ((SELECT artistes.id_artiste FROM artistes
+  JOIN ficheInformations ON artistes.id_fiche_informations_artiste = artistes.id_fiche_information
+  WHERE ficheInformations.nom='Cosma' AND ficheInformations.prenom='Vladimir'),
+  (SELECT utilisateurs.id_utilisateur FROM utilisateurs
+  JOIN ficheInformations ON utilisateurs.id_fiche_informations_utilisateur = utilisateurs.id_fiche_information
+  WHERE ficheInformations.nom='Peyronnet' AND ficheInformations.prenom='Leo'),
   'Compositeur', CURRENT_DATE());
+
+-- USERS FAV MEDIAS
+-- Jerome ADDS Pulp Fiction
+INSERT INTO medias_utilisateurs(id_media, id_utilisateur, categorie_favori_media, date_ajout_media) VALUES
+  ((SELECT medias.id_media FROM medias
+  WHERE medias.titre_media='Pulp Fiction'),
+  (SELECT utilisateurs.id_utilisateur FROM utilisateurs
+  JOIN ficheInformations ON utilisateurs.id_fiche_informations_utilisateur = utilisateurs.id_fiche_information
+  WHERE ficheInformations.nom='Prevotat' AND ficheInformations.prenom='Jerome'),
+  'Film', CURRENT_DATE());
+
+
+-- INSERT INTO GENRES_MEDIAS
+INSERT INTO genres_medias(id_genre, id_media) VALUES
+  ((SELECT id_genre FROM genres WHERE genres.intitule_genre='Drame' AND genres.epoque_genre='90s'),
+  (SELECT id_media FROM medias WHERE medias.titre_media='Pulp Fiction')
+  );
+
 /*
-
-INSERT INTO medias_utilisateurs(
-
-);
-
-
 
 INSERT INTO artistes_medias_priser(
     
 );
 
-INSERT INTO genres_medias(
 
-);
 
 
 
