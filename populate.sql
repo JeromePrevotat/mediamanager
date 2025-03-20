@@ -128,7 +128,7 @@ INSERT INTO ficheInformations (nom, prenom, date_naissance, date_mort) VALUES
   ('Page', 'Dominique', '1934-05-23', '2011-05-14'),
   ('Vallauris', 'Philippe', '1925-10-15', '2005-09-30'),
   ('Van Hool', 'Roger', '1936-08-23', NULL),
-  ('Poiré', 'Jean-Marie', '1945-05-08', NULL),
+  ('Poiré', ' ', '1945-05-08', NULL),
   ('Lonsdale', 'Michael', '1931-05-24', NULL),
   ('Alane', 'Bernard', '1931-01-01', '2003-01-01'),
   ('Molinaro', 'Édouard', '1928-12-10', '2013-06-10'),
@@ -163,6 +163,21 @@ INSERT INTO ficheInformations (nom, prenom, date_naissance, date_mort) VALUES
   ('Barbulée', 'Madeleine', '1923-11-03', '2009-02-14'),
   ('Montavon', 'Max', '1923-11-01', '2000-10-28'),
   ('Girault', 'Jean', '1930-12-17', '1982-07-20');
+
+-- Utilisateurs
+INSERT INTO ficheInformations (nom, prenom, date_naissance, date_mort) VALUES
+  ('Gay', 'Virginie', '1991-10-31', 'NULL'),
+  ('Petit', 'Martin', '1998-01-31', 'NULL'),
+  ('Guillet', 'Vincent', '1991-10-13', 'NULL'),
+  ('Gillet', 'Vincent', '1995-03-20', 'NULL'),
+  ('Palisson', 'Remi', '1994-09-22', 'NULL'),
+  ('Sirol', 'Cloe', '1997-05-12', 'NULL'),
+  ('Prevotat', 'Jerome', '1992-07-26', 'NULL'),
+  ('Ali Moussa', 'Bilel', '2000-10-31', 'NULL'),
+  ('Peyronnet', 'Leo', '2002-02-28', 'NULL'),
+  ('Ounoughi', 'Selim', '1994-11-19', 'NULL'),
+  ('Cas', 'Quentin', '1993-06-27', 'NULL'),
+  ('Lasserre', 'Elijah', '2002-08-03', 'NULL');
 
 INSERT INTO artistes (nb_contribution_artiste, debut_metier_artiste, id_fiche_informations_artiste) VALUES 
   (140, '1945', (SELECT id_fiche_information FROM ficheInformations WHERE nom = 'De Funès' AND prenom = 'Louis')),
@@ -229,7 +244,7 @@ INSERT INTO artistes (nb_contribution_artiste, debut_metier_artiste, id_fiche_in
   (NULL, NULL, (SELECT id_fiche_information FROM ficheInformations WHERE nom = 'Page' AND prenom = 'Dominique')),
   (NULL, NULL, (SELECT id_fiche_information FROM ficheInformations WHERE nom = 'Vallauris' AND prenom = 'Philippe')),
   (60, '1964', (SELECT id_fiche_information FROM ficheInformations WHERE nom = 'Van Hool' AND prenom = 'Roger')),
-  (20, '1971', (SELECT id_fiche_information FROM ficheInformations WHERE nom = 'Poiré' AND prenom = 'Jean-Marie')),
+  (20, '1971', (SELECT id_fiche_information FROM ficheInformations WHERE nom = 'Poiré' AND prenom = ' ')),
 
   (180, '1955', (SELECT id_fiche_information FROM ficheInformations WHERE nom = 'Lonsdale' AND prenom = 'Michael')),
   (NULL, NULL, (SELECT id_fiche_information FROM ficheInformations WHERE nom = 'Alane' AND prenom = 'Bernard')),
@@ -269,8 +284,7 @@ INSERT INTO artistes (nb_contribution_artiste, debut_metier_artiste, id_fiche_in
 
 -- Le Petit Baigneur
 -- Insérer dans la table artistes_medias pour les acteurs
-INSERT INTO artistes_medias (id_media, id_artiste, metier) 
-VALUES
+INSERT INTO artistes_medias (id_media, id_artiste, metier) VALUES
   ((SELECT id_media FROM medias WHERE titre = 'Le Petit Baigneur'), (SELECT id_artiste FROM artistes WHERE nom = 'de Funès' AND prenom = 'Louis'), 'Acteur'),
   ((SELECT id_media FROM medias WHERE titre = 'Le Petit Baigneur'), (SELECT id_artiste FROM artistes WHERE nom = 'Dhéry' AND prenom = 'Robert'), 'Acteur'),
   ((SELECT id_media FROM medias WHERE titre = 'Le Petit Baigneur'), (SELECT id_artiste FROM artistes WHERE nom = 'Brosset' AND prenom = 'Colette'), 'Acteur'),
@@ -281,19 +295,16 @@ VALUES
   ((SELECT id_media FROM medias WHERE titre = 'Le Petit Baigneur'), (SELECT id_artiste FROM artistes WHERE nom = 'Tornade' AND prenom = 'Pierre'), 'Acteur');
 
 -- Insérer dans la table artistes_medias pour le réalisateur
-INSERT INTO artistes_medias (id_media, id_artiste, metier) 
-VALUES
+INSERT INTO artistes_medias (id_media, id_artiste, metier) VALUES
   ((SELECT id_media FROM medias WHERE titre = 'Le Petit Baigneur'), (SELECT id_artiste FROM artistes WHERE nom = 'Dhéry' AND prenom = 'Robert'), 'Réalisateur');
 
 -- Insérer dans la table artistes_medias pour le compositeur
-INSERT INTO artistes_medias (id_media, id_artiste, metier) 
-VALUES
+INSERT INTO artistes_medias (id_media, id_artiste, metier) VALUES
   ((SELECT id_media FROM medias WHERE titre = 'Le Petit Baigneur'), (SELECT id_artiste FROM artistes WHERE nom = 'Calvi' AND prenom = 'Gérard'), 'Compositeur');
 
 -- Le Gendarme de Saint-Tropez
 -- Insérer dans la table artistes_medias pour les acteurs
-INSERT INTO artistes_medias (id_media, id_artiste, metier) 
-VALUES
+INSERT INTO artistes_medias (id_media, id_artiste, metier) VALUES
   ((SELECT id_media FROM medias WHERE titre = 'Le Gendarme de Saint-Tropez'), (SELECT id_artiste FROM artistes WHERE nom = 'de Funès' AND prenom = 'Louis'), 'Acteur'),
   ((SELECT id_media FROM medias WHERE titre = 'Le Gendarme de Saint-Tropez'), (SELECT id_artiste FROM artistes WHERE nom = 'Grad' AND prenom = 'Geneviève'), 'Acteur'),
   ((SELECT id_media FROM medias WHERE titre = 'Le Gendarme de Saint-Tropez'), (SELECT id_artiste FROM artistes WHERE nom = 'Galabru' AND prenom = 'Michel'), 'Acteur'),
@@ -303,20 +314,17 @@ VALUES
   ((SELECT id_media FROM medias WHERE titre = 'Le Gendarme de Saint-Tropez'), (SELECT id_artiste FROM artistes WHERE nom = 'Modo' AND prenom = 'Michel'), 'Acteur');
 
 -- Insérer dans la table artistes_medias pour le réalisateur
-INSERT INTO artistes_medias (id_media, id_artiste, metier) 
-VALUES
+INSERT INTO artistes_medias (id_media, id_artiste, metier) VALUES
   ((SELECT id_media FROM medias WHERE titre = 'Le Gendarme de Saint-Tropez'), (SELECT id_artiste FROM artistes WHERE nom = 'Girault' AND prenom = 'Jean'), 'Réalisateur');
 
 -- Insérer dans la table artistes_medias pour le compositeur
-INSERT INTO artistes_medias (id_media, id_artiste, metier) 
-VALUES
+INSERT INTO artistes_medias (id_media, id_artiste, metier) VALUES
   ((SELECT id_media FROM medias WHERE titre = 'Le Gendarme de Saint-Tropez'), (SELECT id_artiste FROM artistes WHERE nom = 'Lefèvre' AND prenom = 'Raymond'), 'Compositeur');
 
 
 -- Le Gendarme à New York
 -- Insérer dans la table artistes_medias pour les acteurs
-INSERT INTO artistes_medias (id_media, id_artiste, metier) 
-VALUES
+INSERT INTO artistes_medias (id_media, id_artiste, metier) VALUES
   ((SELECT id_media FROM medias WHERE titre = 'Le Gendarme à New York'), (SELECT id_artiste FROM artistes WHERE nom = 'de Funès' AND prenom = 'Louis'), 'Acteur'),
   ((SELECT id_media FROM medias WHERE titre = 'Le Gendarme à New York'), (SELECT id_artiste FROM artistes WHERE nom = 'Galabru' AND prenom = 'Michel'), 'Acteur'),
   ((SELECT id_media FROM medias WHERE titre = 'Le Gendarme à New York'), (SELECT id_artiste FROM artistes WHERE nom = 'Grad' AND prenom = 'Geneviève'), 'Acteur'),
@@ -326,19 +334,16 @@ VALUES
   ((SELECT id_media FROM medias WHERE titre = 'Le Gendarme à New York'), (SELECT id_artiste FROM artistes WHERE nom = 'Modo' AND prenom = 'Michel'), 'Acteur');
 
 -- Insérer dans la table artistes_medias pour le réalisateur
-INSERT INTO artistes_medias (id_media, id_artiste, metier) 
-VALUES
+INSERT INTO artistes_medias (id_media, id_artiste, metier) VALUES
   ((SELECT id_media FROM medias WHERE titre = 'Le Gendarme à New York'), (SELECT id_artiste FROM artistes WHERE nom = 'Girault' AND prenom = 'Jean'), 'Réalisateur');
 
 -- Insérer dans la table artistes_medias pour le compositeur
-INSERT INTO artistes_medias (id_media, id_artiste, metier) 
-VALUES
+INSERT INTO artistes_medias (id_media, id_artiste, metier) VALUES
   ((SELECT id_media FROM medias WHERE titre = 'Le Gendarme à New York'), (SELECT id_artiste FROM artistes WHERE nom = 'Lefèvre' AND prenom = 'Raymond'), 'Compositeur');
 
 -- Le Gendarme se marie
 -- Insérer dans la table artistes_medias pour les acteurs
-INSERT INTO artistes_medias (id_media, id_artiste, metier) 
-VALUES
+INSERT INTO artistes_medias (id_media, id_artiste, metier) VALUES
   ((SELECT id_media FROM medias WHERE titre = 'Le Gendarme se marie'), (SELECT id_artiste FROM artistes WHERE nom = 'de Funès' AND prenom = 'Louis'), 'Acteur'),
   ((SELECT id_media FROM medias WHERE titre = 'Le Gendarme se marie'), (SELECT id_artiste FROM artistes WHERE nom = 'Gensac' AND prenom = 'Claude'), 'Acteur'),
   ((SELECT id_media FROM medias WHERE titre = 'Le Gendarme se marie'), (SELECT id_artiste FROM artistes WHERE nom = 'Galabru' AND prenom = 'Michel'), 'Acteur'),
@@ -349,20 +354,17 @@ VALUES
   ((SELECT id_media FROM medias WHERE titre = 'Le Gendarme se marie'), (SELECT id_artiste FROM artistes WHERE nom = 'Modo' AND prenom = 'Michel'), 'Acteur');
 
 -- Insérer dans la table artistes_medias pour le réalisateur
-INSERT INTO artistes_medias (id_media, id_artiste, metier) 
-VALUES
+INSERT INTO artistes_medias (id_media, id_artiste, metier) VALUES
   ((SELECT id_media FROM medias WHERE titre = 'Le Gendarme se marie'), (SELECT id_artiste FROM artistes WHERE nom = 'Girault' AND prenom = 'Jean'), 'Réalisateur');
 
 -- Insérer dans la table artistes_medias pour le compositeur
-INSERT INTO artistes_medias (id_media, id_artiste, metier) 
-VALUES
+INSERT INTO artistes_medias (id_media, id_artiste, metier) VALUES
   ((SELECT id_media FROM medias WHERE titre = 'Le Gendarme se marie'), (SELECT id_artiste FROM artistes WHERE nom = 'Lefèvre' AND prenom = 'Raymond'), 'Compositeur');
 
 
 -- Le Gendarme en balade
 -- Insérer dans la table artistes_medias pour les acteurs 
-INSERT INTO artistes_medias (id_media, id_artiste, metier) 
-VALUES
+INSERT INTO artistes_medias (id_media, id_artiste, metier) VALUES
   ((SELECT id_media FROM medias WHERE titre = 'Le Gendarme en balade'), (SELECT id_artiste FROM artistes WHERE nom = 'de Funès' AND prenom = 'Louis'), 'Acteur'),
   ((SELECT id_media FROM medias WHERE titre = 'Le Gendarme en balade'), (SELECT id_artiste FROM artistes WHERE nom = 'Galabru' AND prenom = 'Michel'), 'Acteur'),
   ((SELECT id_media FROM medias WHERE titre = 'Le Gendarme en balade'), (SELECT id_artiste FROM artistes WHERE nom = 'Gensac' AND prenom = 'Claude'), 'Acteur'),
@@ -372,20 +374,17 @@ VALUES
   ((SELECT id_media FROM medias WHERE titre = 'Le Gendarme en balade'), (SELECT id_artiste FROM artistes WHERE nom = 'Modo' AND prenom = 'Michel'), 'Acteur');
 
 -- Insérer dans la table artistes_medias pour le réalisateur
-INSERT INTO artistes_medias (id_media, id_artiste, metier) 
-VALUES
+INSERT INTO artistes_medias (id_media, id_artiste, metier) VALUES
   ((SELECT id_media FROM medias WHERE titre = 'Le Gendarme en balade'), (SELECT id_artiste FROM artistes WHERE nom = 'Girault' AND prenom = 'Jean'), 'Réalisateur');
 
 -- Insérer dans la table artistes_medias pour le compositeur
-INSERT INTO artistes_medias (id_media, id_artiste, metier) 
-VALUES
+INSERT INTO artistes_medias (id_media, id_artiste, metier) VALUES
   ((SELECT id_media FROM medias WHERE titre = 'Le Gendarme en balade'), (SELECT id_artiste FROM artistes WHERE nom = 'Lefèvre' AND prenom = 'Raymond'), 'Compositeur');
 
 
 -- Le Gendarme et les Extra-terrestres
 -- Insérer dans la table artistes_medias pour les acteurs 
-INSERT INTO artistes_medias (id_media, id_artiste, metier) 
-VALUES
+INSERT INTO artistes_medias (id_media, id_artiste, metier) VALUES
   ((SELECT id_media FROM medias WHERE titre = 'Le Gendarme et les Extra-terrestres'), (SELECT id_artiste FROM artistes WHERE nom = 'de Funès' AND prenom = 'Louis'), 'Acteur'),
   ((SELECT id_media FROM medias WHERE titre = 'Le Gendarme et les Extra-terrestres'), (SELECT id_artiste FROM artistes WHERE nom = 'Galabru' AND prenom = 'Michel'), 'Acteur'),
   ((SELECT id_media FROM medias WHERE titre = 'Le Gendarme et les Extra-terrestres'), (SELECT id_artiste FROM artistes WHERE nom = 'Risch' AND prenom = 'Maurice'), 'Acteur'),
@@ -394,20 +393,17 @@ VALUES
   ((SELECT id_media FROM medias WHERE titre = 'Le Gendarme et les Extra-terrestres'), (SELECT id_artiste FROM artistes WHERE nom = 'Modo' AND prenom = 'Michel'), 'Acteur');
 
 -- Insérer dans la table artistes_medias pour le réalisateur
-INSERT INTO artistes_medias (id_media, id_artiste, metier) 
-VALUES
+INSERT INTO artistes_medias (id_media, id_artiste, metier) VALUES
   ((SELECT id_media FROM medias WHERE titre = 'Le Gendarme et les Extra-terrestres'), (SELECT id_artiste FROM artistes WHERE nom = 'Girault' AND prenom = 'Jean'), 'Réalisateur');
 
 -- Insérer dans la table artistes_medias pour le compositeur
-INSERT INTO artistes_medias (id_media, id_artiste, metier) 
-VALUES
+INSERT INTO artistes_medias (id_media, id_artiste, metier) VALUES
   ((SELECT id_media FROM medias WHERE titre = 'Le Gendarme et les Extra-terrestres'), (SELECT id_artiste FROM artistes WHERE nom = 'Lefèvre' AND prenom = 'Raymond'), 'Compositeur');
 
 
 -- Le Gendarme et les Gendarmettes
 -- Insérer dans la table artistes_medias pour les acteurs 
-INSERT INTO artistes_medias (id_media, id_artiste, metier) 
-VALUES
+INSERT INTO artistes_medias (id_media, id_artiste, metier) VALUES
   ((SELECT id_media FROM medias WHERE titre = 'Le Gendarme et les Gendarmettes'), (SELECT id_artiste FROM artistes WHERE nom = 'de Funès' AND prenom = 'Louis'), 'Acteur'),
   ((SELECT id_media FROM medias WHERE titre = 'Le Gendarme et les Gendarmettes'), (SELECT id_artiste FROM artistes WHERE nom = 'Galabru' AND prenom = 'Michel'), 'Acteur'),
   ((SELECT id_media FROM medias WHERE titre = 'Le Gendarme et les Gendarmettes'), (SELECT id_artiste FROM artistes WHERE nom = 'Gensac' AND prenom = 'Claude'), 'Acteur'),
@@ -420,21 +416,18 @@ VALUES
   ((SELECT id_media FROM medias WHERE titre = 'Le Gendarme et les Gendarmettes'), (SELECT id_artiste FROM artistes WHERE nom = 'Clavier' AND prenom = 'Christian'), 'Acteur');
 
 -- Insérer dans la table artistes_medias pour les réalisateurs
-INSERT INTO artistes_medias (id_media, id_artiste, metier) 
-VALUES
+INSERT INTO artistes_medias (id_media, id_artiste, metier) VALUES
   ((SELECT id_media FROM medias WHERE titre = 'Le Gendarme et les Gendarmettes'), (SELECT id_artiste FROM artistes WHERE nom = 'Girault' AND prenom = 'Jean'), 'Réalisateur'),
   ((SELECT id_media FROM medias WHERE titre = 'Le Gendarme et les Gendarmettes'), (SELECT id_artiste FROM artistes WHERE nom = 'Aboyantz' AND prenom = 'Tony'), 'Réalisateur');
 
 -- Insérer dans la table artistes_medias pour le compositeur
-INSERT INTO artistes_medias (id_media, id_artiste, metier) 
-VALUES
+INSERT INTO artistes_medias (id_media, id_artiste, metier) VALUES
   ((SELECT id_media FROM medias WHERE titre = 'Le Gendarme et les Gendarmettes'), (SELECT id_artiste FROM artistes WHERE nom = 'Lefèvre' AND prenom = 'Raymond'), 'Compositeur');
 
 
 -- Fantomas
 -- Insérer dans la table artistes_medias pour les acteurs 
-INSERT INTO artistes_medias (id_media, id_artiste, metier) 
-VALUES
+INSERT INTO artistes_medias (id_media, id_artiste, metier) VALUES
   ((SELECT id_media FROM medias WHERE titre = 'Fantômas'), (SELECT id_artiste FROM artistes WHERE nom = 'Marais' AND prenom = 'Jean'), 'Acteur'),
   ((SELECT id_media FROM medias WHERE titre = 'Fantômas'), (SELECT id_artiste FROM artistes WHERE nom = 'de Funès' AND prenom = 'Louis'), 'Acteur'),
   ((SELECT id_media FROM medias WHERE titre = 'Fantômas'), (SELECT id_artiste FROM artistes WHERE nom = 'Demongeot' AND prenom = 'Mylène'), 'Actrice'),
@@ -448,20 +441,17 @@ VALUES
   ((SELECT id_media FROM medias WHERE titre = 'Fantômas'), (SELECT id_artiste FROM artistes WHERE nom = 'Wanner' AND prenom = 'Hugues'), 'Acteur');
 
 -- Insérer dans la table artistes_medias pour le réalisateur
-INSERT INTO artistes_medias (id_media, id_artiste, metier) 
-VALUES
+INSERT INTO artistes_medias (id_media, id_artiste, metier) VALUES
   ((SELECT id_media FROM medias WHERE titre = 'Fantômas'), (SELECT id_artiste FROM artistes WHERE nom = 'Hunebelle' AND prenom = 'André'), 'Réalisateur');
 
 -- Insérer dans la table artistes_medias pour le compositeur
-INSERT INTO artistes_medias (id_media, id_artiste, metier) 
-VALUES
+INSERT INTO artistes_medias (id_media, id_artiste, metier) VALUES
   ((SELECT id_media FROM medias WHERE titre = 'Fantômas'), (SELECT id_artiste FROM artistes WHERE nom = 'Magne' AND prenom = 'Michel'), 'Compositeur');
 
 
 -- Fantomas se déchaine
 -- Insérer dans la table artistes_medias pour les acteurs 
-INSERT INTO artistes_medias (id_media, id_artiste, metier) 
-VALUES
+INSERT INTO artistes_medias (id_media, id_artiste, metier) VALUES
   ((SELECT id_media FROM medias WHERE titre = 'Fantômas se déchaîne'), (SELECT id_artiste FROM artistes WHERE nom = 'Marais' AND prenom = 'Jean'), 'Acteur'),
   ((SELECT id_media FROM medias WHERE titre = 'Fantômas se déchaîne'), (SELECT id_artiste FROM artistes WHERE nom = 'de Funès' AND prenom = 'Louis'), 'Acteur'),
   ((SELECT id_media FROM medias WHERE titre = 'Fantômas se déchaîne'), (SELECT id_artiste FROM artistes WHERE nom = 'Demongeot' AND prenom = 'Mylène'), 'Actrice'),
@@ -470,20 +460,17 @@ VALUES
   ((SELECT id_media FROM medias WHERE titre = 'Fantômas se déchaîne'), (SELECT id_artiste FROM artistes WHERE nom = 'Duplaix' AND prenom = 'Michel'), 'Acteur');
 
 -- Insérer dans la table artistes_medias pour le réalisateur
-INSERT INTO artistes_medias (id_media, id_artiste, metier) 
-VALUES
+INSERT INTO artistes_medias (id_media, id_artiste, metier) VALUES
   ((SELECT id_media FROM medias WHERE titre = 'Fantômas se déchaîne'), (SELECT id_artiste FROM artistes WHERE nom = 'Hunebelle' AND prenom = 'André'), 'Réalisateur');
 
 -- Insérer dans la table artistes_medias pour le compositeur
-INSERT INTO artistes_medias (id_media, id_artiste, metier) 
-VALUES
+INSERT INTO artistes_medias (id_media, id_artiste, metier) VALUES
   ((SELECT id_media FROM medias WHERE titre = 'Fantômas se déchaîne'), (SELECT id_artiste FROM artistes WHERE nom = 'Magne' AND prenom = 'Michel'), 'Compositeur');
 
 
 -- Fantomas contre Scotland Yard
 -- Insérer dans la table artistes_medias pour les acteurs 
-INSERT INTO artistes_medias (id_media, id_artiste, metier) 
-VALUES
+INSERT INTO artistes_medias (id_media, id_artiste, metier) VALUES
   ((SELECT id_media FROM medias WHERE titre = 'Fantômas contre Scotland Yard'), (SELECT id_artiste FROM artistes WHERE nom = 'Marais' AND prenom = 'Jean'), 'Acteur'),
   ((SELECT id_media FROM medias WHERE titre = 'Fantômas contre Scotland Yard'), (SELECT id_artiste FROM artistes WHERE nom = 'de Funès' AND prenom = 'Louis'), 'Acteur'),
   ((SELECT id_media FROM medias WHERE titre = 'Fantômas contre Scotland Yard'), (SELECT id_artiste FROM artistes WHERE nom = 'Demongeot' AND prenom = 'Mylène'), 'Actrice'),
@@ -492,37 +479,31 @@ VALUES
   ((SELECT id_media FROM medias WHERE titre = 'Fantômas contre Scotland Yard'), (SELECT id_artiste FROM artistes WHERE nom = 'Caussimon' AND prenom = 'Jean-Roger'), 'Acteur');
 
 -- Insérer dans la table artistes_medias pour le réalisateur
-INSERT INTO artistes_medias (id_media, id_artiste, metier) 
-VALUES
+INSERT INTO artistes_medias (id_media, id_artiste, metier) VALUES
   ((SELECT id_media FROM medias WHERE titre = 'Fantômas contre Scotland Yard'), (SELECT id_artiste FROM artistes WHERE nom = 'Hunebelle' AND prenom = 'André'), 'Réalisateur');
 
 -- Insérer dans la table artistes_medias pour le compositeur
-INSERT INTO artistes_medias (id_media, id_artiste, metier) 
-VALUES
+INSERT INTO artistes_medias (id_media, id_artiste, metier) VALUES
   ((SELECT id_media FROM medias WHERE titre = 'Fantômas contre Scotland Yard'), (SELECT id_artiste FROM artistes WHERE nom = 'Magne' AND prenom = 'Michel'), 'Compositeur');
 
 
 -- Le Corniaud
 -- Insérer dans la table artistes_medias pour les acteurs 
-INSERT INTO artistes_medias (id_media, id_artiste, metier) 
-VALUES
+INSERT INTO artistes_medias (id_media, id_artiste, metier) VALUES
   ((SELECT id_media FROM medias WHERE titre = 'Le Corniaud'), (SELECT id_artiste FROM artistes WHERE nom = 'Bourvil' AND prenom = 'André'), 'Acteur'),
   ((SELECT id_media FROM medias WHERE titre = 'Le Corniaud'), (SELECT id_artiste FROM artistes WHERE nom = 'de Funès' AND prenom = 'Louis'), 'Acteur');
 
 -- Insérer dans la table artistes_medias pour le réalisateur
-INSERT INTO artistes_medias (id_media, id_artiste, metier) 
-VALUES
+INSERT INTO artistes_medias (id_media, id_artiste, metier) VALUES
   ((SELECT id_media FROM medias WHERE titre = 'Le Corniaud'), (SELECT id_artiste FROM artistes WHERE nom = 'Oury' AND prenom = 'Gérard'), 'Réalisateur');
 
 -- Insérer dans la table artistes_medias pour le compositeur
-INSERT INTO artistes_medias (id_media, id_artiste, metier) 
-VALUES
+INSERT INTO artistes_medias (id_media, id_artiste, metier) VALUES
   ((SELECT id_media FROM medias WHERE titre = 'Le Corniaud'), (SELECT id_artiste FROM artistes WHERE nom = 'Delerue' AND prenom = 'Georges'), 'Compositeur');
 
 -- La Grande Vadrouille
 -- Insérer dans la table artistes_medias pour les acteurs 
-INSERT INTO artistes_medias (id_media, id_artiste, metier) 
-VALUES
+INSERT INTO artistes_medias (id_media, id_artiste, metier) VALUES
   ((SELECT id_media FROM medias WHERE titre = 'La Grande Vadrouille'), (SELECT id_artiste FROM artistes WHERE nom = 'Bourvil' AND prenom = 'André'), 'Acteur'),
   ((SELECT id_media FROM medias WHERE titre = 'La Grande Vadrouille'), (SELECT id_artiste FROM artistes WHERE nom = 'de Funès' AND prenom = 'Louis'), 'Acteur'),
   ((SELECT id_media FROM medias WHERE titre = 'La Grande Vadrouille'), (SELECT id_artiste FROM artistes WHERE nom = 'Terry-Thomas' AND prenom IS NULL), 'Acteur'),
@@ -530,20 +511,17 @@ VALUES
   ((SELECT id_media FROM medias WHERE titre = 'La Grande Vadrouille'), (SELECT id_artiste FROM artistes WHERE nom = 'Marie Dubois' AND prenom IS NULL), 'Acteur');
 
 -- Insérer dans la table artistes_medias pour le réalisateur
-INSERT INTO artistes_medias (id_media, id_artiste, metier) 
-VALUES
+INSERT INTO artistes_medias (id_media, id_artiste, metier) VALUES
   ((SELECT id_media FROM medias WHERE titre = 'La Grande Vadrouille'), (SELECT id_artiste FROM artistes WHERE nom = 'Oury' AND prenom = 'Gérard'), 'Réalisateur');
 
 -- Insérer dans la table artistes_medias pour le compositeur
-INSERT INTO artistes_medias (id_media, id_artiste, metier) 
-VALUES
+INSERT INTO artistes_medias (id_media, id_artiste, metier) VALUES
   ((SELECT id_media FROM medias WHERE titre = 'La Grande Vadrouille'), (SELECT id_artiste FROM artistes WHERE nom = 'Auric' AND prenom = 'Georges'), 'Compositeur');
 
 
 -- Oscar
 -- Insérer dans la table artistes_medias pour les acteurs 
-INSERT INTO artistes_medias (id_media, id_artiste, metier) 
-VALUES
+INSERT INTO artistes_medias (id_media, id_artiste, metier) VALUES
   ((SELECT id_media FROM medias WHERE titre = 'Oscar'), (SELECT id_artiste FROM artistes WHERE nom = 'de Funès' AND prenom = 'Louis'), 'Acteur'),
   ((SELECT id_media FROM medias WHERE titre = 'Oscar'), (SELECT id_artiste FROM artistes WHERE nom = 'Rich' AND prenom = 'Claude'), 'Acteur'),
   ((SELECT id_media FROM medias WHERE titre = 'Oscar'), (SELECT id_artiste FROM artistes WHERE nom = 'Gensac' AND prenom = 'Claude'), 'Acteur'),
@@ -557,40 +535,34 @@ VALUES
   ((SELECT id_media FROM medias WHERE titre = 'Oscar'), (SELECT id_artiste FROM artistes WHERE nom = 'Van Hool' AND prenom = 'Roger'), 'Acteur');
 
 -- Insérer dans la table artistes_medias pour le réalisateur
-INSERT INTO artistes_medias (id_media, id_artiste, metier) 
-VALUES
+INSERT INTO artistes_medias (id_media, id_artiste, metier) VALUES
   ((SELECT id_media FROM medias WHERE titre = 'Oscar'), (SELECT id_artiste FROM artistes WHERE nom = 'Poiré' AND prenom = 'Jean-Marie'), 'Réalisateur');
 
 -- Insérer dans la table artistes_medias pour le compositeur
-INSERT INTO artistes_medias (id_media, id_artiste, metier) 
-VALUES
+INSERT INTO artistes_medias (id_media, id_artiste, metier) VALUES
   ((SELECT id_media FROM medias WHERE titre = 'Oscar'), (SELECT id_artiste FROM artistes WHERE nom = 'Delerue' AND prenom = 'Georges'), 'Compositeur');
 
 
 -- Hibernatus
 -- Insérer dans la table artistes_medias pour les acteurs 
-INSERT INTO artistes_medias (id_media, id_artiste, metier) 
-VALUES
+INSERT INTO artistes_medias (id_media, id_artiste, metier) VALUES
   ((SELECT id_media FROM medias WHERE titre = 'Hibernatus'), (SELECT id_artiste FROM artistes WHERE nom = 'de Funès' AND prenom = 'Louis'), 'Acteur'),
   ((SELECT id_media FROM medias WHERE titre = 'Hibernatus'), (SELECT id_artiste FROM artistes WHERE nom = 'Lonsdale' AND prenom = 'Michael'), 'Acteur'),
   ((SELECT id_media FROM medias WHERE titre = 'Hibernatus'), (SELECT id_artiste FROM artistes WHERE nom = 'Gensac' AND prenom = 'Claude'), 'Acteur'),
   ((SELECT id_media FROM medias WHERE titre = 'Hibernatus'), (SELECT id_artiste FROM artistes WHERE nom = 'Alane' AND prenom = 'Bernard'), 'Acteur');
 
 -- Insérer dans la table artistes_medias pour le réalisateur
-INSERT INTO artistes_medias (id_media, id_artiste, metier) 
-VALUES
+INSERT INTO artistes_medias (id_media, id_artiste, metier) VALUES
   ((SELECT id_media FROM medias WHERE titre = 'Hibernatus'), (SELECT id_artiste FROM artistes WHERE nom = 'Molinaro' AND prenom = 'Édouard'), 'Réalisateur');
 
 -- Insérer dans la table artistes_medias pour le compositeur
-INSERT INTO artistes_medias (id_media, id_artiste, metier) 
-VALUES
+INSERT INTO artistes_medias (id_media, id_artiste, metier) VALUES
   ((SELECT id_media FROM medias WHERE titre = 'Hibernatus'), (SELECT id_artiste FROM artistes WHERE nom = 'Delerue' AND prenom = 'Georges'), 'Compositeur');
 
 
 -- La Folie des Grandeurs
 -- Insérer dans la table artistes_medias pour les acteurs 
-INSERT INTO artistes_medias (id_media, id_artiste, metier) 
-VALUES
+INSERT INTO artistes_medias (id_media, id_artiste, metier) VALUES
   ((SELECT id_media FROM medias WHERE titre = 'La Folie des grandeurs'), (SELECT id_artiste FROM artistes WHERE nom = 'de Funès' AND prenom = 'Louis'), 'Acteur'),
   ((SELECT id_media FROM medias WHERE titre = 'La Folie des grandeurs'), (SELECT id_artiste FROM artistes WHERE nom = 'Montand' AND prenom = 'Yves'), 'Acteur'),
   ((SELECT id_media FROM medias WHERE titre = 'La Folie des grandeurs'), (SELECT id_artiste FROM artistes WHERE nom = 'Sapritch' AND prenom = 'Alice'), 'Acteur'),
@@ -598,21 +570,18 @@ VALUES
   ((SELECT id_media FROM medias WHERE titre = 'La Folie des grandeurs'), (SELECT id_artiste FROM artistes WHERE nom = 'Mendoza' AND prenom = 'Alberto'), 'Acteur');
 
 -- Insérer dans la table artistes_medias pour le réalisateur
-INSERT INTO artistes_medias (id_media, id_artiste, metier) 
-VALUES
+INSERT INTO artistes_medias (id_media, id_artiste, metier) VALUES
   ((SELECT id_media FROM medias WHERE titre = 'La Folie des grandeurs'), (SELECT id_artiste FROM artistes WHERE nom = 'Oury' AND prenom = 'Gérard'), 'Réalisateur');
 
 -- Insérer dans la table artistes_medias pour les compositeurs
-INSERT INTO artistes_medias (id_media, id_artiste, metier) 
-VALUES
+INSERT INTO artistes_medias (id_media, id_artiste, metier) VALUES
   ((SELECT id_media FROM medias WHERE titre = 'La Folie des grandeurs'), (SELECT id_artiste FROM artistes WHERE nom = 'Polnareff' AND prenom = 'Michel'), 'Compositeur'),
   ((SELECT id_media FROM medias WHERE titre = 'La Folie des grandeurs'), (SELECT id_artiste FROM artistes WHERE nom = 'Roy' AND prenom = 'Hervé'), 'Compositeur');
 
 
 -- Les Aventures de Rabi Jacob
 -- Insérer dans la table artistes_medias pour les acteurs 
-INSERT INTO artistes_medias (id_media, id_artiste, metier) 
-VALUES
+INSERT INTO artistes_medias (id_media, id_artiste, metier) VALUES
   ((SELECT id_media FROM medias WHERE titre = 'Les Aventures de Rabbi Jacob'), (SELECT id_artiste FROM artistes WHERE nom = 'de Funès' AND prenom = 'Louis'), 'Acteur'),
   ((SELECT id_media FROM medias WHERE titre = 'Les Aventures de Rabbi Jacob'), (SELECT id_artiste FROM artistes WHERE nom = 'Giraud' AND prenom = 'Claude'), 'Acteur'),
   ((SELECT id_media FROM medias WHERE titre = 'Les Aventures de Rabbi Jacob'), (SELECT id_artiste FROM artistes WHERE nom = 'Delair' AND prenom = 'Suzy'), 'Acteur'),
@@ -622,20 +591,17 @@ VALUES
   ((SELECT id_media FROM medias WHERE titre = 'Les Aventures de Rabbi Jacob'), (SELECT id_artiste FROM artistes WHERE nom = 'Miou-Miou' AND prenom IS NULL), 'Acteur');
 
 -- Insérer dans la table artistes_medias pour le réalisateur
-INSERT INTO artistes_medias (id_media, id_artiste, metier) 
-VALUES
+INSERT INTO artistes_medias (id_media, id_artiste, metier) VALUES
   ((SELECT id_media FROM medias WHERE titre = 'Les Aventures de Rabbi Jacob'), (SELECT id_artiste FROM artistes WHERE nom = 'Oury' AND prenom = 'Gérard'), 'Réalisateur');
 
 -- Insérer dans la table artistes_medias pour le compositeur
-INSERT INTO artistes_medias (id_media, id_artiste, metier) 
-VALUES
+INSERT INTO artistes_medias (id_media, id_artiste, metier) VALUES
   ((SELECT id_media FROM medias WHERE titre = 'Les Aventures de Rabbi Jacob'), (SELECT id_artiste FROM artistes WHERE nom = 'Cosma' AND prenom = 'Vladimir'), 'Compositeur');
 
 
 -- L'Aile ou la Cuisse
 -- Insérer dans la table artistes_medias pour les acteurs 
-INSERT INTO artistes_medias (id_media, id_artiste, metier) 
-VALUES
+INSERT INTO artistes_medias (id_media, id_artiste, metier) VALUES
   ((SELECT id_media FROM medias WHERE titre = 'L''Aile ou la Cuisse'), (SELECT id_artiste FROM artistes WHERE nom = 'de Funès' AND prenom = 'Louis'), 'Acteur'),
   ((SELECT id_media FROM medias WHERE titre = 'L''Aile ou la Cuisse'), (SELECT id_artiste FROM artistes WHERE nom = 'Colucci' AND prenom = 'Michel (Coluche)'), 'Acteur'),
   ((SELECT id_media FROM medias WHERE titre = 'L''Aile ou la Cuisse'), (SELECT id_artiste FROM artistes WHERE nom = 'Zacharias' AND prenom = 'Ann'), 'Acteur'),
@@ -643,40 +609,34 @@ VALUES
   ((SELECT id_media FROM medias WHERE titre = 'L''Aile ou la Cuisse'), (SELECT id_artiste FROM artistes WHERE nom = 'Gensac' AND prenom = 'Claude'), 'Acteur');
 
 -- Insérer dans la table artistes_medias pour le réalisateur
-INSERT INTO artistes_medias (id_media, id_artiste, metier) 
-VALUES
+INSERT INTO artistes_medias (id_media, id_artiste, metier) VALUES
   ((SELECT id_media FROM medias WHERE titre = 'L''Aile ou la Cuisse'), (SELECT id_artiste FROM artistes WHERE nom = 'Zidi' AND prenom = 'Claude'), 'Réalisateur');
 
 -- Insérer dans la table artistes_medias pour le compositeur
-INSERT INTO artistes_medias (id_media, id_artiste, metier) 
-VALUES
+INSERT INTO artistes_medias (id_media, id_artiste, metier) VALUES
   ((SELECT id_media FROM medias WHERE titre = 'L''Aile ou la Cuisse'), (SELECT id_artiste FROM artistes WHERE nom = 'Cosma' AND prenom = 'Vladimir'), 'Compositeur');
 
 
 -- La Zizanie
 -- Insérer dans la table artistes_medias pour les acteurs 
-INSERT INTO artistes_medias (id_media, id_artiste, metier) 
-VALUES
+INSERT INTO artistes_medias (id_media, id_artiste, metier) VALUES
   ((SELECT id_media FROM medias WHERE titre = 'La Zizanie'), (SELECT id_artiste FROM artistes WHERE nom = 'de Funès' AND prenom = 'Louis'), 'Acteur'),
   ((SELECT id_media FROM medias WHERE titre = 'La Zizanie'), (SELECT id_artiste FROM artistes WHERE nom = 'Girardot' AND prenom = 'Annie'), 'Acteur'),
   ((SELECT id_media FROM medias WHERE titre = 'La Zizanie'), (SELECT id_artiste FROM artistes WHERE nom = 'Risch' AND prenom = 'Maurice'), 'Acteur'),
   ((SELECT id_media FROM medias WHERE titre = 'La Zizanie'), (SELECT id_artiste FROM artistes WHERE nom = 'Guiomar' AND prenom = 'Julien'), 'Acteur');
 
 -- Insérer dans la table artistes_medias pour le réalisateur
-INSERT INTO artistes_medias (id_media, id_artiste, metier) 
-VALUES
+INSERT INTO artistes_medias (id_media, id_artiste, metier) VALUES
   ((SELECT id_media FROM medias WHERE titre = 'La Zizanie'), (SELECT id_artiste FROM artistes WHERE nom = 'Zidi' AND prenom = 'Claude'), 'Réalisateur');
 
 -- Insérer dans la table artistes_medias pour le compositeur
-INSERT INTO artistes_medias (id_media, id_artiste, metier) 
-VALUES
+INSERT INTO artistes_medias (id_media, id_artiste, metier) VALUES
   ((SELECT id_media FROM medias WHERE titre = 'La Zizanie'), (SELECT id_artiste FROM artistes WHERE nom = 'Cosma' AND prenom = 'Vladimir'), 'Compositeur');
 
 
 -- L'Avare
 -- Insérer dans la table artistes_medias pour les acteurs 
-INSERT INTO artistes_medias (id_media, id_artiste, metier) 
-VALUES
+INSERT INTO artistes_medias (id_media, id_artiste, metier) VALUES
   ((SELECT id_media FROM medias WHERE titre = 'L''Avare'), (SELECT id_artiste FROM artistes WHERE nom = 'de Funès' AND prenom = 'Louis'), 'Acteur'),
   ((SELECT id_media FROM medias WHERE titre = 'L''Avare'), (SELECT id_artiste FROM artistes WHERE nom = 'Cabot-David' AND prenom = 'Franck'), 'Acteur'),
   ((SELECT id_media FROM medias WHERE titre = 'L''Avare'), (SELECT id_artiste FROM artistes WHERE nom = 'Bellon' AND prenom = 'Hervé'), 'Acteur'),
@@ -693,20 +653,17 @@ VALUES
   ((SELECT id_media FROM medias WHERE titre = 'L''Avare'), (SELECT id_artiste FROM artistes WHERE nom = 'Montavon' AND prenom = 'Max'), 'Acteur');
 
 -- Insérer dans la table artistes_medias pour le réalisateur
-INSERT INTO artistes_medias (id_media, id_artiste, metier) 
-VALUES
+INSERT INTO artistes_medias (id_media, id_artiste, metier) VALUES
   ((SELECT id_media FROM medias WHERE titre = 'L''Avare'), (SELECT id_artiste FROM artistes WHERE nom = 'Girault' AND prenom = 'Jean'), 'Réalisateur');
 
 -- Insérer dans la table artistes_medias pour le compositeur
-INSERT INTO artistes_medias (id_media, id_artiste, metier) 
-VALUES
+INSERT INTO artistes_medias (id_media, id_artiste, metier) VALUES
   ((SELECT id_media FROM medias WHERE titre = 'L''Avare'), (SELECT id_artiste FROM artistes WHERE nom = 'Cosma' AND prenom = 'Vladimir'), 'Compositeur');
 
 
 -- La Soupe aux Choux
 -- Insérer dans la table artistes_medias pour les acteurs 
-INSERT INTO artistes_medias (id_media, id_artiste, metier) 
-VALUES
+INSERT INTO artistes_medias (id_media, id_artiste, metier) VALUES
   ((SELECT id_media FROM medias WHERE titre = 'La Soupe aux choux'), (SELECT id_artiste FROM artistes WHERE nom = 'de Funès' AND prenom = 'Louis'), 'Acteur'),
   ((SELECT id_media FROM medias WHERE titre = 'La Soupe aux choux'), (SELECT id_artiste FROM artistes WHERE nom = 'Carmet' AND prenom = 'Jean'), 'Acteur'),
   ((SELECT id_media FROM medias WHERE titre = 'La Soupe aux choux'), (SELECT id_artiste FROM artistes WHERE nom = 'Villeret' AND prenom = 'Jacques'), 'Acteur'),
@@ -724,29 +681,73 @@ VALUES
   ((SELECT id_media FROM medias WHERE titre = 'La Soupe aux choux'), (SELECT id_artiste FROM artistes WHERE nom = 'Nugue' AND prenom = 'Carole'), 'Acteur');
 
 -- Insérer dans la table artistes_medias pour le réalisateur
-INSERT INTO artistes_medias (id_media, id_artiste, metier) 
-VALUES
+INSERT INTO artistes_medias (id_media, id_artiste, metier) VALUES
   ((SELECT id_media FROM medias WHERE titre = 'La Soupe aux choux'), (SELECT id_artiste FROM artistes WHERE nom = 'Girault' AND prenom = 'Jean'), 'Réalisateur');
 
 -- Insérer dans la table artistes_medias pour le compositeur
-INSERT INTO artistes_medias (id_media, id_artiste, metier) 
-VALUES
+INSERT INTO artistes_medias (id_media, id_artiste, metier) VALUES
   ((SELECT id_media FROM medias WHERE titre = 'La Soupe aux choux'), (SELECT id_artiste FROM artistes WHERE nom = 'Lefèvre' AND prenom = 'Raymond'), 'Compositeur');
 
 
+-- INSERT INTO USERS
+INSERT INTO utilisateurs(pseudo_utilisateur, mail_utilisateur, mdp_utilisateur, id_fiche_informations) VALUES
+  ('ViviLaRafale', 'ViviLaRafale@hotmail.com', '$2y$10$J8Q7kGvA5uBq3t.l7UzE9e2xNVsK5FYj7IuyDdXx3V8TklDC3AqD6', (SELECT id_fiche_information FROM ficheInformations WHERE nom='Gay' AND prenom='Virginie')),
+  ('LePetitMart', 'LePetitMart@hotmail.com', '$2y$10$PLK7QdzTYV1pXks4OXdVUO9tqGmWBbW6sdljUu17tBaCaiwZy8zqC', (SELECT id_fiche_information FROM ficheInformations WHERE nom='Petit' AND prenom='Martin')),
+  ('VincouLeBg', 'VincouLeBg@hotmail.com', '$2y$10$Yx7j5FOOwP1D9vJQNz0lTud3qXzFEU6DshRNEjx8DQf5/YBvv6aMu', (SELECT id_fiche_information FROM ficheInformations WHERE nom='Guillet' AND prenom='Vincent')),
+  ('GiletJauneVince', 'GiletJauneVince@gmail.com', '$2y$10$T6g6Kkso0NdLyPcbjIOUBOZ4m4kjdJMG80Xx1D/rwE2z3xqvgcf1a', (SELECT id_fiche_information FROM ficheInformations WHERE nom='Gillet' AND prenom='Vincent')),
+  ('RemsLeFou', 'RemsLeFou@gmail.com', '$2y$10$9PJG/ZcF4odQ5d/2v4FmIOna.qTQ2pgxx6zY5zS3NqpX0LLWxhH2W', (SELECT id_fiche_information FROM ficheInformations WHERE nom='Palisson' AND prenom='Remi')),
+  ('CloéFaitLeShow', 'CloéFaitLeShow@gmail.com', '$2y$10$0ED5u8npzRYszW/5fGyzVuxxt9tO/lQ8X45fvebyUymp7xQbsIFxK', (SELECT id_fiche_information FROM ficheInformations WHERE nom='Sirol' AND prenom='Cloe')),
+  ('JéjéLeSniper', 'JéjéLeSniper@yopmail.com', '$2y$10$AdS7KuJVoF2AfVgkZHDHFuCVW0dPttRsGVP2zCmLgtd9lf/Zbn6Bm', (SELECT id_fiche_information FROM ficheInformations WHERE nom='Prevotat' AND prenom='Jerome')),
+  ('BilelLaMenace', 'BilelLaMenace@yopmail.com', '$2y$10$AxXbO6xu6PtcLVZV53npeulZLZ3ERex7XXLUXF7i8/9DfKqlHHzc2', (SELECT id_fiche_information FROM ficheInformations WHERE nom='Ali Moussa' AND prenom='Bilel')),
+  ('LeoDuTurfu', 'LeoDuTurfu@yopmail.com', '$2y$10$FPlMw7CtwCTl9mLzAv5hNOt3f8IzMGzhtphnSTV3cA/BZw1/8Yv/m', (SELECT id_fiche_information FROM ficheInformations WHERE nom='Peyronnet' AND prenom='Leo')),
+  ('SelimTktMemePas', 'SelimTktMemePas@yahoo.fr', '$2y$10$z2zt5HcJkz1bZKJLv3pR7OKDxR9iJ8F.3q4/uqjddTPYQ0AnkXZgG', (SELECT id_fiche_information FROM ficheInformations WHERE nom='Ounoughi' AND prenom='Selim')),
+  ('QuentosFuego', 'QuentosFuego@yahoo.fr', '$2y$10$CcVV2YegmK4Pr/GNC7W8R.pX7WY3RQzMk/U6d3mMKTGbMbApGcq9e', (SELECT id_fiche_information FROM ficheInformations WHERE nom='Cas' AND prenom='Quentin')),
+  ('Elijahlalala', 'Elijahlalala@yahoo.fr', '$2y$10$AqTjzQCM5CBwmW3fYw3M.OEs9VqR93BPyS8kqscay8MLKnYlPQaem', (SELECT id_fiche_information FROM ficheInformations WHERE nom='Lasserre' AND prenom='Elijah'));
 
+
+-- USER FAV ARTISTES
+INSERT INTO artistes_utilisateurs(id_artiste, id_utilisateur, categorie_favori_artiste,date_ajout_artiste) VALUES
+  -- ADD Louis de Funes as Fav
+  ((SELECT artistes.id_artiste FROM artistes
+  JOIN ficheInformations ON artistes.id_fiche_informations_artiste = artistes.id_fiche_information
+  WHERE ficheInformations.nom='De Funès' AND ficheInformations.prenom='Louis'),
+  (SELECT utilisateurs.id_utilisateur FROM utilisateurs
+  JOIN ficheInformations ON utilisateurs.id_fiche_informations_utilisateur = utilisateurs.id_fiche_information
+  WHERE ficheInformations.nom='Prevotat' AND ficheInformations.prenom='Jerome'),
+  'Acteur', CURRENT_DATE()),
+  ((SELECT artistes.id_artiste FROM artistes
+  JOIN ficheInformations ON artistes.id_fiche_informations_artiste = artistes.id_fiche_information
+  WHERE ficheInformations.nom='Galabru' AND ficheInformations.prenom='Michel'),
+  (SELECT utilisateurs.id_utilisateur FROM utilisateurs
+  JOIN ficheInformations ON utilisateurs.id_fiche_informations_utilisateur = utilisateurs.id_fiche_information
+  WHERE ficheInformations.nom='Prevotat' AND ficheInformations.prenom='Jerome'),
+  'Réalisateur', CURRENT_DATE()),
+  -- ADD Jean Marie Poiré as Fav
+  ((SELECT artistes.id_artiste FROM artistes
+  JOIN ficheInformations ON artistes.id_fiche_informations_artiste = artistes.id_fiche_information
+  WHERE ficheInformations.nom='Poiré' AND ficheInformations.prenom='Jean-Marie'),
+  (SELECT utilisateurs.id_utilisateur FROM utilisateurs
+  JOIN ficheInformations ON utilisateurs.id_fiche_informations_utilisateur = utilisateurs.id_fiche_information
+  WHERE ficheInformations.nom='Prevotat' AND ficheInformations.prenom='Jerome'),
+  'Réalisateur', CURRENT_DATE());
+
+-- Leo
+-- ADD Compositeur
+INSERT INTO artistes_utilisateurs(id_artiste, id_utilisateur, categorie_favori_artiste,date_ajout_artiste) VALUES
+  ((SELECT artistes.id_artiste FROM artistes
+  JOIN ficheInformations ON artistes.id_fiche_informations_artiste = artistes.id_fiche_information
+  WHERE ficheInformations.nom='Lefèvre' AND ficheInformations.prenom='Raymond'),
+  (SELECT utilisateurs.id_utilisateur FROM utilisateurs
+  JOIN ficheInformations ON utilisateurs.id_fiche_informations_utilisateur = utilisateurs.id_fiche_information
+  WHERE ficheInformations.nom='Peyronnet' AND ficheInformations.prenom='Leo'),
+  'Compositeur', CURRENT_DATE());
 /*
-INSERT INTO utilisateurs(
-
-);
 
 INSERT INTO medias_utilisateurs(
 
 );
 
-INSERT INTO artistes_utilisateurs(
-   
-);
+
 
 INSERT INTO artistes_medias_priser(
     
