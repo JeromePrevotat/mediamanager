@@ -180,31 +180,31 @@ INSERT INTO ficheInformations (nom, prenom, date_naissance, date_mort) VALUES
   ('Roth', 'Tim', '1961-05-14', NULL),
   ('Travolta', 'John', '1954-02-18', NULL),
   ('Jackson', 'Samuel L.', '1948-12-21', NULL),
-  ('Thurman', 'Uma', '1970-04-29', NULL)
+  ('Thurman', 'Uma', '1970-04-29', NULL),
   ('Dale', 'Dick', '1937-05-04', '2019-03-16');
 
 
 -- Utilisateurs
 INSERT INTO ficheInformations (nom, prenom, date_naissance, date_mort) VALUES
-  ('Gay', 'Virginie', '1991-10-31', 'NULL'),
-  ('Petit', 'Martin', '1998-01-31', 'NULL'),
-  ('Guillet', 'Vincent', '1991-10-13', 'NULL'),
-  ('Gillet', 'Vincent', '1995-03-20', 'NULL'),
-  ('Palisson', 'Remi', '1994-09-22', 'NULL'),
-  ('Sirol', 'Cloe', '1997-05-12', 'NULL'),
-  ('Prevotat', 'Jerome', '1992-07-26', 'NULL'),
-  ('Ali Moussa', 'Bilel', '2000-10-31', 'NULL'),
-  ('Peyronnet', 'Leo', '2002-02-28', 'NULL'),
-  ('Ounoughi', 'Selim', '1994-11-19', 'NULL'),
-  ('Cas', 'Quentin', '1993-06-27', 'NULL'),
-  ('Lasserre', 'Elijah', '2002-08-03', 'NULL');
+  ('Gay', 'Virginie', '1991-10-31', NULL),
+  ('Petit', 'Martin', '1998-01-31', NULL),
+  ('Guillet', 'Vincent', '1991-10-13', NULL),
+  ('Gillet', 'Vincent', '1995-03-20', NULL),
+  ('Palisson', 'Remi', '1994-09-22', NULL),
+  ('Sirol', 'Cloe', '1997-05-12', NULL),
+  ('Prevotat', 'Jerome', '1992-07-26', NULL),
+  ('Ali Moussa', 'Bilel', '2000-10-31', NULL),
+  ('Peyronnet', 'Leo', '2002-02-28', NULL),
+  ('Ounoughi', 'Selim', '1994-11-19', NULL),
+  ('Cas', 'Quentin', '1993-06-27', NULL),
+  ('Lasserre', 'Elijah', '2002-08-03', NULL);
 
 
 -- ARTISTES
 -- De Funes
 INSERT INTO artistes (nb_contribution_artiste, debut_metier_artiste, id_fiche_informations_artiste) VALUES 
-  (140, '1945', (SELECT id_fiche_information FROM ficheInformations WHERE nom = 'De Funès' AND prenom = 'Louis')),
-  (60, '1946', (SELECT id_fiche_information FROM ficheInformations WHERE nom = 'Dhéry' AND prenom = 'Robert')),
+  (140, 1945, (SELECT id_fiche_information FROM ficheInformations WHERE nom = 'De Funès' AND prenom = 'Louis')),
+  (60, 1946, (SELECT id_fiche_information FROM ficheInformations WHERE nom = 'Dhéry' AND prenom = 'Robert')),
   (NULL, NULL, (SELECT id_fiche_information FROM ficheInformations WHERE nom = 'Brosset' AND prenom = 'Colette')),
   (NULL, NULL, (SELECT id_fiche_information FROM ficheInformations WHERE nom = 'Parisy' AND prenom = 'Andréa')),
   (NULL, NULL, (SELECT id_fiche_information FROM ficheInformations WHERE nom = 'Fabrizi' AND prenom = 'Franco')),
@@ -215,10 +215,10 @@ INSERT INTO artistes (nb_contribution_artiste, debut_metier_artiste, id_fiche_in
   (NULL, NULL, (SELECT id_fiche_information FROM ficheInformations WHERE nom = 'Calvi' AND prenom = 'Gérard')),
   (NULL, NULL, (SELECT id_fiche_information FROM ficheInformations WHERE nom = 'Grad' AND prenom = 'Geneviève')),
 
-  (9, '1960', (SELECT id_fiche_information FROM ficheInformations WHERE nom = 'Lefebvre' AND prenom = 'Jean')),
-  (10, '1964', (SELECT id_fiche_information FROM ficheInformations WHERE nom = 'Marin' AND prenom = 'Christian')),
-  (6, '1964', (SELECT id_fiche_information FROM ficheInformations WHERE nom = 'Grosso' AND prenom = 'Guy')),
-  (6, '1964', (SELECT id_fiche_information FROM ficheInformations WHERE nom = 'Modo' AND prenom = 'Michel')),
+  (9, 1960, (SELECT id_fiche_information FROM ficheInformations WHERE nom = 'Lefebvre' AND prenom = 'Jean')),
+  (10, 1964, (SELECT id_fiche_information FROM ficheInformations WHERE nom = 'Marin' AND prenom = 'Christian')),
+  (6, 1964, (SELECT id_fiche_information FROM ficheInformations WHERE nom = 'Grosso' AND prenom = 'Guy')),
+  (6, 1964, (SELECT id_fiche_information FROM ficheInformations WHERE nom = 'Modo' AND prenom = 'Michel')),
   (NULL, NULL, (SELECT id_fiche_information FROM ficheInformations WHERE nom = 'Girault' AND prenom = 'Jean')),
 
   (NULL, NULL, (SELECT id_fiche_information FROM ficheInformations WHERE nom = 'Lefèvre' AND prenom = 'Raymond')),
@@ -233,13 +233,13 @@ INSERT INTO artistes (nb_contribution_artiste, debut_metier_artiste, id_fiche_in
   (NULL, NULL, (SELECT id_fiche_information FROM ficheInformations WHERE nom = 'Aboyantz' AND prenom = 'Tony')),
   (NULL, NULL, (SELECT id_fiche_information FROM ficheInformations WHERE nom = 'Marais' AND prenom = 'Jean')),
 
-  (70, '1953', (SELECT id_fiche_information FROM ficheInformations WHERE nom = 'Demongeot' AND prenom = 'Mylène')),
-  (100, '1942', (SELECT id_fiche_information FROM ficheInformations WHERE nom = 'Dynam' AND prenom = 'Jacques')),
-  (200, '1934', (SELECT id_fiche_information FROM ficheInformations WHERE nom = 'Dalban' AND prenom = 'Robert')),
-  (10, '1956', (SELECT id_fiche_information FROM ficheInformations WHERE nom = 'Arnaud' AND prenom = 'Marie-Hélène')),
-  (1, '1964', (SELECT id_fiche_information FROM ficheInformations WHERE nom = 'Peysson' AND prenom = 'Anne-Marie')),
+  (70, 1953, (SELECT id_fiche_information FROM ficheInformations WHERE nom = 'Demongeot' AND prenom = 'Mylène')),
+  (100, 1942, (SELECT id_fiche_information FROM ficheInformations WHERE nom = 'Dynam' AND prenom = 'Jacques')),
+  (200, 1934, (SELECT id_fiche_information FROM ficheInformations WHERE nom = 'Dalban' AND prenom = 'Robert')),
+  (10, 1956, (SELECT id_fiche_information FROM ficheInformations WHERE nom = 'Arnaud' AND prenom = 'Marie-Hélène')),
+  (1, 1964, (SELECT id_fiche_information FROM ficheInformations WHERE nom = 'Peysson' AND prenom = 'Anne-Marie')),
 
-  (4, '1964', (SELECT id_fiche_information FROM ficheInformations WHERE nom = 'Toma' AND prenom = 'Christian')),
+  (4, 1964, (SELECT id_fiche_information FROM ficheInformations WHERE nom = 'Toma' AND prenom = 'Christian')),
   (NULL, NULL, (SELECT id_fiche_information FROM ficheInformations WHERE nom = 'Duplaix' AND prenom = 'Michel')),
   (NULL, NULL, (SELECT id_fiche_information FROM ficheInformations WHERE nom = 'Tainsy' AND prenom = 'Andrée')),
   (NULL, NULL, (SELECT id_fiche_information FROM ficheInformations WHERE nom = 'Wanner' AND prenom = 'Hugues')),
@@ -251,28 +251,28 @@ INSERT INTO artistes (nb_contribution_artiste, debut_metier_artiste, id_fiche_in
   (NULL, NULL, (SELECT id_fiche_information FROM ficheInformations WHERE nom = 'Bourvil' AND prenom = 'André')),
   (NULL, NULL, (SELECT id_fiche_information FROM ficheInformations WHERE nom = 'Oury' AND prenom = 'Gérard')),
 
-  (350, '1952', (SELECT id_fiche_information FROM ficheInformations WHERE nom = 'Delerue' AND prenom = 'Georges')),
-  (70, '1949', (SELECT id_fiche_information FROM ficheInformations WHERE nom = 'Terry-Thomas' AND prenom = 'NULL')),
-  (50, '1964', (SELECT id_fiche_information FROM ficheInformations WHERE nom = 'Mike Marshall' AND prenom = 'NULL')),
-  (65, '1959', (SELECT id_fiche_information FROM ficheInformations WHERE nom = 'Marie Dubois' AND prenom = 'NULL')),
-  (NULL, '1930', (SELECT id_fiche_information FROM ficheInformations WHERE nom = 'Auric' AND prenom = 'Georges')),
+  (350, 1952, (SELECT id_fiche_information FROM ficheInformations WHERE nom = 'Delerue' AND prenom = 'Georges')),
+  (70, 1949, (SELECT id_fiche_information FROM ficheInformations WHERE nom = 'Terry-Thomas' AND prenom = 'NULL')),
+  (50, 1964, (SELECT id_fiche_information FROM ficheInformations WHERE nom = 'Mike Marshall' AND prenom = 'NULL')),
+  (65, 1959, (SELECT id_fiche_information FROM ficheInformations WHERE nom = 'Marie Dubois' AND prenom = 'NULL')),
+  (NULL, 1930, (SELECT id_fiche_information FROM ficheInformations WHERE nom = 'Auric' AND prenom = 'Georges')),
 
-  (80, '1955', (SELECT id_fiche_information FROM ficheInformations WHERE nom = 'Rich' AND prenom = 'Claude')),
-  (30, '1966', (SELECT id_fiche_information FROM ficheInformations WHERE nom = 'Natanson' AND prenom = 'Agathe')),
-  (100, '1948', (SELECT id_fiche_information FROM ficheInformations WHERE nom = 'Préboist' AND prenom = 'Paul')),
+  (80, 1955, (SELECT id_fiche_information FROM ficheInformations WHERE nom = 'Rich' AND prenom = 'Claude')),
+  (30, 1966, (SELECT id_fiche_information FROM ficheInformations WHERE nom = 'Natanson' AND prenom = 'Agathe')),
+  (100, 1948, (SELECT id_fiche_information FROM ficheInformations WHERE nom = 'Préboist' AND prenom = 'Paul')),
   (NULL, NULL, (SELECT id_fiche_information FROM ficheInformations WHERE nom = 'Saurel' AND prenom = 'Sylvia')),
-  (50, '1955', (SELECT id_fiche_information FROM ficheInformations WHERE nom = 'David' AND prenom = 'Mario')),
+  (50, 1955, (SELECT id_fiche_information FROM ficheInformations WHERE nom = 'David' AND prenom = 'Mario')),
 
-  (50, '1947', (SELECT id_fiche_information FROM ficheInformations WHERE nom = 'Delbat' AND prenom = 'Germaine')),
+  (50, 1947, (SELECT id_fiche_information FROM ficheInformations WHERE nom = 'Delbat' AND prenom = 'Germaine')),
   (NULL, NULL, (SELECT id_fiche_information FROM ficheInformations WHERE nom = 'Page' AND prenom = 'Dominique')),
   (NULL, NULL, (SELECT id_fiche_information FROM ficheInformations WHERE nom = 'Vallauris' AND prenom = 'Philippe')),
-  (60, '1964', (SELECT id_fiche_information FROM ficheInformations WHERE nom = 'Van Hool' AND prenom = 'Roger')),
-  (20, '1971', (SELECT id_fiche_information FROM ficheInformations WHERE nom = 'Poiré' AND prenom = ' ')),
+  (60, 1964, (SELECT id_fiche_information FROM ficheInformations WHERE nom = 'Van Hool' AND prenom = 'Roger')),
+  (20, 1971, (SELECT id_fiche_information FROM ficheInformations WHERE nom = 'Poiré' AND prenom = ' ')),
 
-  (180, '1955', (SELECT id_fiche_information FROM ficheInformations WHERE nom = 'Lonsdale' AND prenom = 'Michael')),
+  (180, 1955, (SELECT id_fiche_information FROM ficheInformations WHERE nom = 'Lonsdale' AND prenom = 'Michael')),
   (NULL, NULL, (SELECT id_fiche_information FROM ficheInformations WHERE nom = 'Alane' AND prenom = 'Bernard')),
   (NULL, NULL, (SELECT id_fiche_information FROM ficheInformations WHERE nom = 'Molinaro' AND prenom = 'Édouard')),
-  (30, '1946', (SELECT id_fiche_information FROM ficheInformations WHERE nom = 'Montand' AND prenom = 'Yves')),
+  (30, 1946, (SELECT id_fiche_information FROM ficheInformations WHERE nom = 'Montand' AND prenom = 'Yves')),
   (NULL, NULL, (SELECT id_fiche_information FROM ficheInformations WHERE nom = 'Sapritch' AND prenom = 'Alice')),
 
   (NULL, NULL, (SELECT id_fiche_information FROM ficheInformations WHERE nom = 'Schubert' AND prenom = 'Karin')),
@@ -281,25 +281,25 @@ INSERT INTO artistes (nb_contribution_artiste, debut_metier_artiste, id_fiche_in
   (NULL, NULL, (SELECT id_fiche_information FROM ficheInformations WHERE nom = 'Roy' AND prenom = 'Hervé')),
   (NULL, NULL, (SELECT id_fiche_information FROM ficheInformations WHERE nom = 'Giraud' AND prenom = 'Claude')),
 
-  (50, '1938', (SELECT id_fiche_information FROM ficheInformations WHERE nom = 'Delair' AND prenom = 'Suzy')),
-  (60, '1931', (SELECT id_fiche_information FROM ficheInformations WHERE nom = 'Dalio' AND prenom = 'Marcel')),
-  (40, '1955', (SELECT id_fiche_information FROM ficheInformations WHERE nom = 'Montagnani' AND prenom = 'Renzo')),
-  (50, '1965', (SELECT id_fiche_information FROM ficheInformations WHERE nom = 'Guybet' AND prenom = 'Henri')),
-  (70, '1970', (SELECT id_fiche_information FROM ficheInformations WHERE nom = 'Miou-Miou' AND prenom = 'NULL')),
+  (50, 1938, (SELECT id_fiche_information FROM ficheInformations WHERE nom = 'Delair' AND prenom = 'Suzy')),
+  (60, 1931, (SELECT id_fiche_information FROM ficheInformations WHERE nom = 'Dalio' AND prenom = 'Marcel')),
+  (40, 1955, (SELECT id_fiche_information FROM ficheInformations WHERE nom = 'Montagnani' AND prenom = 'Renzo')),
+  (50, 1965, (SELECT id_fiche_information FROM ficheInformations WHERE nom = 'Guybet' AND prenom = 'Henri')),
+  (70, 1970, (SELECT id_fiche_information FROM ficheInformations WHERE nom = 'Miou-Miou' AND prenom = 'NULL')),
 
-  (300, '1966', (SELECT id_fiche_information FROM ficheInformations WHERE nom = 'Cosma' AND prenom = 'Vladimir')),
-  (NULL, '1970', (SELECT id_fiche_information FROM ficheInformations WHERE nom = 'Colucci' AND prenom = 'Michel (Coluche)')),
+  (300, 1966, (SELECT id_fiche_information FROM ficheInformations WHERE nom = 'Cosma' AND prenom = 'Vladimir')),
+  (NULL, 1970, (SELECT id_fiche_information FROM ficheInformations WHERE nom = 'Colucci' AND prenom = 'Michel (Coluche)')),
   (NULL, NULL, (SELECT id_fiche_information FROM ficheInformations WHERE nom = 'Zacharias' AND prenom = 'Ann')),
   (NULL, NULL, (SELECT id_fiche_information FROM ficheInformations WHERE nom = 'Guiomar' AND prenom = 'Julien')),
   (NULL, NULL, (SELECT id_fiche_information FROM ficheInformations WHERE nom = 'Zidi' AND prenom = 'Claude')),
 
-  (150, '1950', (SELECT id_fiche_information FROM ficheInformations WHERE nom = 'Girardot' AND prenom = 'Annie')),
+  (150, 1950, (SELECT id_fiche_information FROM ficheInformations WHERE nom = 'Girardot' AND prenom = 'Annie')),
   (NULL, NULL, (SELECT id_fiche_information FROM ficheInformations WHERE nom = 'Cabot-David' AND prenom = 'Franck')),
   (NULL, NULL, (SELECT id_fiche_information FROM ficheInformations WHERE nom = 'Bellon' AND prenom = 'Hervé')),
   (NULL, NULL, (SELECT id_fiche_information FROM ficheInformations WHERE nom = 'Menez' AND prenom = 'Bernard')),
   (NULL, NULL, (SELECT id_fiche_information FROM ficheInformations WHERE nom = 'Audoubert' AND prenom = 'Georges')),
 
-  (NULL, '1954', (SELECT id_fiche_information FROM ficheInformations WHERE nom = 'Caudry' AND prenom = 'Anne')),
+  (NULL, 1954, (SELECT id_fiche_information FROM ficheInformations WHERE nom = 'Caudry' AND prenom = 'Anne')),
   (NULL, NULL, (SELECT id_fiche_information FROM ficheInformations WHERE nom = 'Dupray' AND prenom = 'Claire')),
   (NULL, NULL, (SELECT id_fiche_information FROM ficheInformations WHERE nom = 'Bourday' AND prenom = 'Micheline')),
   (NULL, NULL, (SELECT id_fiche_information FROM ficheInformations WHERE nom = 'Barbulée' AND prenom = 'Madeleine')),
@@ -307,12 +307,12 @@ INSERT INTO artistes (nb_contribution_artiste, debut_metier_artiste, id_fiche_in
 
 -- Quentin Tarentino
 INSERT INTO artistes (nb_contribution_artiste, debut_metier_artiste, id_fiche_informations_artiste) VALUES 
-  (10, '1992', (SELECT id_fiche_information FROM ficheInformations WHERE nom = 'Tarentino' AND prenom = 'Quentin')),
-  (70, '1980', (SELECT id_fiche_information FROM ficheInformations WHERE nom = 'Willis' AND prenom = 'Bruce')),
-  (50, '1984', (SELECT id_fiche_information FROM ficheInformations WHERE nom = 'Roth' AND prenom = 'Tim')),
-  (60, '1976', (SELECT id_fiche_information FROM ficheInformations WHERE nom = 'Travolta' AND prenom = 'John')),
-  (150, '1972', (SELECT id_fiche_information FROM ficheInformations WHERE nom = 'Jackson' AND prenom = 'Samuel L.')),
-  (50, '1988', (SELECT id_fiche_information FROM ficheInformations WHERE nom = 'Thurman' AND prenom = 'Uma')),
+  (10, 1992, (SELECT id_fiche_information FROM ficheInformations WHERE nom = 'Tarentino' AND prenom = 'Quentin')),
+  (70, 1980, (SELECT id_fiche_information FROM ficheInformations WHERE nom = 'Willis' AND prenom = 'Bruce')),
+  (50, 1984, (SELECT id_fiche_information FROM ficheInformations WHERE nom = 'Roth' AND prenom = 'Tim')),
+  (60, 1976, (SELECT id_fiche_information FROM ficheInformations WHERE nom = 'Travolta' AND prenom = 'John')),
+  (150, 1972, (SELECT id_fiche_information FROM ficheInformations WHERE nom = 'Jackson' AND prenom = 'Samuel L.')),
+  (50, 1988, (SELECT id_fiche_information FROM ficheInformations WHERE nom = 'Thurman' AND prenom = 'Uma')),
   (NULL, NULL, (SELECT id_fiche_information FROM ficheInformations WHERE nom = 'Dale' AND prenom = 'Dick'));
 
 
@@ -333,7 +333,7 @@ INSERT INTO artistes_medias (id_media, id_artiste, metier) VALUES
 
 -- Compositeur
 INSERT INTO artistes_medias (id_media, id_artiste, metier) VALUES
-  ((SELECT id_media FROM medias WHERE titre = 'Pulp Fiction'), (SELECT id_artiste FROM artistes WHERE nom = 'Dale' AND prenom = 'Dick'), 'Compositeur'),
+  ((SELECT id_media FROM medias WHERE titre = 'Pulp Fiction'), (SELECT id_artiste FROM artistes WHERE nom = 'Dale' AND prenom = 'Dick'), 'Compositeur');
 
 -- Le Petit Baigneur
 -- Insérer dans la table artistes_medias pour les acteurs
@@ -855,11 +855,16 @@ INSERT INTO genres_medias(id_genre, id_media) VALUES
   (SELECT id_media FROM medias WHERE medias.titre_media='Pulp Fiction')
   );
 
-/*
 
-INSERT INTO artistes_medias_priser(
-    
-);
+-- INSERT INTO ARTISTES_MEDIAS_PRISER
+INSERT INTO artistes_medias_priser(id_media, id_artiste, intitule_prix, categorie_prix, anne_prix) VALUES
+  ((SELECT medias.id_media FROM medias WHERE medias.titre_media = 'Pulp Fiction'),
+  (SELECT artistes.id_artiste FROM artistes
+  JOIN ficheInformations
+  ON artistes.id_fiche_information = ficheInformations.id_artiste
+  WHERE ficheInformations.nom = 'Tarentino' AND ficheInformations.prenom = 'Quentin'),
+  'Palme d''or', 'Cannes Film Festival', 1994
+  );
 
 
 

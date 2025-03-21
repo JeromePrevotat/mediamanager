@@ -50,7 +50,7 @@ CREATE TABLE IF NOT EXISTS medias_utilisateurs(
 CREATE TABLE IF NOT EXISTS artistes(
     id_artiste INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     nb_contribution_artiste INT,
-    debut_metier_artiste DATE,
+    debut_metier_artiste INT,
     id_fiche_informations_artiste INT NOT NULL,
     FOREIGN KEY (id_fiche_informations_artiste) REFERENCES ficheInformations(id_fiche_information)
 );
