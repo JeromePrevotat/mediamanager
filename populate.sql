@@ -1,3 +1,12 @@
+-- TESTING PURPOSES
+INSERT INTO medias(titre_media,categorie_media,date_sortie_media) VALUES
+  ('Le Cerveau', 'Film', 1969);
+
+INSERT INTO artistes_medias (id_media, id_artiste, metier) VALUES
+  ((SELECT id_media FROM medias WHERE titre_media = 'Le Cerveau'), (SELECT id_artiste FROM artistes JOIN ficheInformations ON artistes.id_fiche_informations_artiste = ficheInformations.id_fiche_information WHERE ficheInformations.nom = 'Bourvil' AND prenom = 'André'), 'Acteur'),
+  ((SELECT id_media FROM medias WHERE titre_media = 'Le Cerveau'), (SELECT id_artiste FROM artistes JOIN ficheInformations ON artistes.id_fiche_informations_artiste = ficheInformations.id_fiche_information WHERE ficheInformations.nom = 'Oury' AND prenom = 'Gérard'), 'Réalisateur');
+
+-- GENRES
 INSERT INTO genres(intitule_genre,epoque_genre) VALUES
   ('Comedie', '60s'),   ('Drame', '60s'),   ('Horreur', '60s'),   
   ('Comedie', '70s'),   ('Drame', '70s'),   ('Horreur', '70s'), 
@@ -17,22 +26,22 @@ INSERT INTO medias (titre_media, categorie_media, date_sortie_media) VALUES
     ('La Tentation de Barbizon', 'Film', 1946),
     ('Six Heures à perdre', 'Film', 1947),
     ('Le Château de la dernière chance', 'Film', 1947),
-    ('Dernier Refuge', 'Drame', 1947),
+    ('Dernier Refuge', 'Film', 1947),
     ('Antoine et Antoinette', 'Film', 1947),
     ('Croisière pour l''inconnu', 'Film', 1948),
-    ('Du Guesclin', 'Historique', 1949),
-    ('Mission à Tanger', 'Aventure', 1949),
+    ('Du Guesclin', 'Film', 1949),
+    ('Mission à Tanger', 'Film', 1949),
     ('Je n''aime que toi', 'Film', 1949),
     ('Millionnaires d''un jour', 'Film', 1949),
     ('Vient de paraître', 'Film', 1949),
     ('Rendez-vous de juillet', 'Film', 1949),
-    ('Un certain monsieur', 'Policier', 1950),
+    ('Un certain monsieur', 'Film', 1950),
     ('La Rue sans loi', 'Film', 1950),
     ('Pas de week-end pour notre amour', 'Film', 1950),
     ('Le Roi Pandore', 'Film', 1950),
     ('La Vie chantée', 'Film', 1951),
     ('Boîte à vendre', 'Film', 1951),
-    ('Foyer perdu', 'Drame', 1952),
+    ('Foyer perdu', 'Film', 1952),
     ('Les Sept Péchés capitaux', 'Film', 1952),
     ('Monsieur Taxi', 'Film', 1952),
     ('La Fugue de monsieur Perle', 'Film', 1952),
@@ -42,7 +51,7 @@ INSERT INTO medias (titre_media, categorie_media, date_sortie_media) VALUES
     ('Les Corsaires du bois de Boulogne', 'Film', 1954),
     ('Ah ! les belles bacchantes', 'Film', 1954),
     ('Poisson d''avril', 'Film', 1954),
-    ('Les Intrigantes', 'Drame', 1954),
+    ('Les Intrigantes', 'Film', 1954),
     ('Papa, maman, la bonne et moi', 'Film', 1954),
     ('Escalier de service', 'Film', 1954),
     ('Le Mouton à cinq pattes', 'Film', 1954),
@@ -68,7 +77,7 @@ INSERT INTO medias (titre_media, categorie_media, date_sortie_media) VALUES
     ('Oscar', 'Film', 1967),
     ('Hibernatus', 'Film', 1969),
     ('L''Homme orchestre', 'Film', 1970),
-    ('Jo', 'Film policière', 1971),
+    ('Jo', 'Film', 1971),
     ('La Folie des grandeurs', 'Film', 1971),
     ('Les Aventures de Rabbi Jacob', 'Film', 1973),
     ('L''Aile ou la Cuisse', 'Film', 1976),
