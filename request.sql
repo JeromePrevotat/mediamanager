@@ -1,24 +1,25 @@
 -- Tous les Films dans lesquels Louis de Funès a joué
-SELECT * FROM medias
+SELECT medias.id_media FROM medias
 JOIN artistes_medias
 ON medias.id_media = artistes_medias.id_media
-WHERE artistes_medias.id_artiste = 1 AND artistes_medias.metier = 'Acteur'
+WHERE artistes_medias.id_artiste = 1    -- Louis de Funès
+AND artistes_medias.metier = 'Acteur'   -- En tant qu'Acteur
 
 -- Les Gendarmes de Saint Tropez classés par ordre de sortie
-SELECT * FROM medias
-WHERE medias.titre_media LIKE '%Gendarme%'
+SELECT medias.id_media FROM medias
+WHERE medias.titre_media LIKE '%Gendarme%'  -- Le nom du Media contient le mot Gendarme
 ORDER BY medias.date_sortie_media;
 
 -- Tous les Films avec le duo Louis de Funès et Bourvil
-SELECT COUNT(artistes_medias.id_media) AS Duo, medias.* FROM artistes_medias
+SELECT medias.id_media FROM artistes_medias
 JOIN medias
 ON medias.id_media = artistes_medias.id_media
 WHERE artistes_medias.metier = 'Acteur'
-AND artistes_medias.id_artiste = 1 OR artistes_medias.id_artiste = 39 -- Ressort tous les Films avec LdF ou Bourvil
+AND artistes_medias.id_artiste = 1 OR artistes_medias.id_artiste = 39 -- Ressort tous les Films avec Louis de Funès ou Bourvil
 GROUP BY medias.id_media
 HAVING COUNT(artistes_medias.id_media) > 1; -- Uniquement le Duo
 
--- Leo se créé sa Playlist avec tous les Compositeurs
+-- Leo se créé sa liste d'artistes favoris avec tous les Compositeurs
 INSERT INTO artistes_utilisateurs(id_artiste, id_utilisateur, categorie_favori_artiste,date_ajout_artiste) VALUES
     (16, 9, 'Compositeur', CURRENT_DATE()),   -- Lefèvre Raymond
     (36, 9, 'Compositeur', CURRENT_DATE()),   -- Magne Michel
@@ -29,8 +30,30 @@ INSERT INTO artistes_utilisateurs(id_artiste, id_utilisateur, categorie_favori_a
     (71, 9, 'Compositeur', CURRENT_DATE());   -- Cosma Vladimir
 
 /*  Quentin qui n'y connait rien en musique et qui a des goûts de films très précis veut ajouter a sa Playlist
-    Les films de la Playlist de Leo qui correspondent à ses goûts */
+    Les films de la liste d'artistes favoris de Leo qui correspondent à ses goûts */
+
+-- Requete de Quentin
+SELECT medias.id_media FROM artistes_utilisateurs
+JOIN artistes_medias
+ON artistes_utilisateurs.id_artiste = artistes_medias.id_artiste
+JOIN medias
+ON medias.id_media = artistes_medias.id_media
+WHERE (artistes_utilisateurs.id_utilisateur = 9)    -- Leo Favoris
+AND medias.date_sortie_media BETWEEN 1960 AND 1969 OR medias.date_sortie_media BETWEEN 1980 AND CURRENT_DATE()  -- Films de 60 à 69 et 80 de nos jours
+GROUP BY medias.id_media -- Exclu les doublons (La Folie des grandeurs à 2 Compositeurs qui sont dans les Favoris de Leo)
+ORDER BY medias.date_sortie_media;
+
+-- Comparaison avec Leo
+SELECT medias.* FROM artistes_utilisateurs
+    JOIN artistes_medias
+    ON artistes_utilisateurs.id_artiste = artistes_medias.id_artiste
+    JOIN medias
+    ON medias.id_media = artistes_medias.id_media
+    WHERE (artistes_utilisateurs.id_utilisateur = 9)
+    GROUP BY medias.id_media
+    ORDER BY medias.date_sortie_media;
+
+/*  Le back end de l'app utilisera cette requete en ajoutant une ligne pour chaque Media
+    et en remplacant dans chaque ligne ID_MEDIA par l'id correspondant obtenu avec la requete précédente */
 INSERT INTO medias_utilisateurs(id_media, id_utilisateur, categorie_favori_media, date_ajout_media) VALUES
-
-
-  'Film', CURRENT_DATE();
+   ID_MEDIA , 11, 'Film', CURRENT_DATE();
